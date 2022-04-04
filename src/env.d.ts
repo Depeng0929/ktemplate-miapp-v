@@ -10,5 +10,6 @@ declare module '*.vue' {
 declare namespace NodeJS {
   interface ProcessEnv {
     NODE_ENV: 'development' | 'production'
+    VUE_APP_API: string
   }
 }

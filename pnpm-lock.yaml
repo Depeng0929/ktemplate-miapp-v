@@ -27,6 +27,7 @@ specifiers:
   qs: ^6.10.3
   sass: ^1.49.11
   typescript: ^4.6.3
+  uni-ajax: ^2.4.4
   unplugin-auto-import: ^0.6.9
   vite: ^2.9.0
   vite-plugin-windicss: ^1.8.3
@@ -50,6 +51,7 @@ dependencies:
   '@dcloudio/uni-ui': 1.4.13
   '@depeng9527/tools': 2.2.3
   qs: 6.10.3
+  uni-ajax: 2.4.4
   vue: 3.2.31
   vue-i18n: 9.1.9_vue@3.2.31
 
@@ -4105,6 +4107,10 @@ packages:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
     dev: true
+
+  /uni-ajax/2.4.4:
+    resolution: {integrity: sha512-2UlOek3FBD4C8jwouJWAf1NvoseYbpbQXnZ5GsECvZoFl9NrDiazian2tzfMCSQINu3+7uq5499hR2//PYC7PA==}
+    dev: false
 
   /unist-util-stringify-position/2.0.3:
     resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
