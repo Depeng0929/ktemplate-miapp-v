@@ -1,6 +1,10 @@
 <template>
   <view class="content">
     <image class="logo" src="/static/logo.png" />
+    <uni-badge text="1" />
+    <button type="primary">
+      页面主操作 Loading
+    </button>
     <view class="text-area">
       <text class="title">
         {{ title }}
