@@ -7,7 +7,7 @@
       页面主操作 Loading
     </button>
     <view class="text-area">
-      <text class="title">
+      <text class="title mt-4">
         {{ title }}
       </text>
     </view>
