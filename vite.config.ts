@@ -18,9 +18,14 @@ export default defineConfig({
       imports: [
         'vue',
         {
-          '~/hooks/router': [
+          '~/composables/router': [
             'useRouter',
             'useRoute',
+          ],
+        },
+        {
+          '@depeng9527/tools': [
+            'debug',
           ],
         },
       ],
