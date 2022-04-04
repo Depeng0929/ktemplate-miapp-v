@@ -1,5 +1,6 @@
 <template>
   <view class="content">
+    111
     <image class="logo" src="/static/logo.png" />
     <uni-badge text="1" />
     <button type="primary">
@@ -18,8 +19,9 @@ import { ref } from 'vue'
 const title = ref('Hello')
 </script>
 
-<style>
+<style lang="scss">
 .content {
+  color: $uni-color-primary;
   display: flex;
   flex-direction: column;
   align-items: center;
