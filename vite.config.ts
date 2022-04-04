@@ -17,6 +17,12 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
+        {
+          '~/hooks/router': [
+            'useRouter',
+            'useRoute',
+          ],
+        },
       ],
     }),
   ],

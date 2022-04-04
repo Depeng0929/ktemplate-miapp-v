@@ -21,8 +21,10 @@ specifiers:
   '@depeng9527/eslint-config': ^1.4.1
   '@depeng9527/tools': ^2.2.3
   '@types/node': ^17.0.23
+  '@types/qs': ^6.9.7
   '@typescript-eslint/eslint-plugin': ^5.17.0
   eslint: ^8.12.0
+  qs: ^6.10.3
   sass: ^1.49.11
   typescript: ^4.6.3
   unplugin-auto-import: ^0.6.9
@@ -30,7 +32,6 @@ specifiers:
   vite-plugin-windicss: ^1.8.3
   vue: ^3.2.31
   vue-i18n: ^9.1.9
-  vuex: ^4.0.2
   windicss: ^3.5.1
 
 dependencies:
@@ -48,9 +49,9 @@ dependencies:
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3040320220325006_vue@3.2.31
   '@dcloudio/uni-ui': 1.4.13
   '@depeng9527/tools': 2.2.3
+  qs: 6.10.3
   vue: 3.2.31
   vue-i18n: 9.1.9_vue@3.2.31
-  vuex: 4.0.2_vue@3.2.31
 
 devDependencies:
   '@dcloudio/types': 2.5.19
@@ -59,6 +60,7 @@ devDependencies:
   '@dcloudio/vite-plugin-uni': 3.0.0-alpha-3040320220325006_vite@2.9.1+vue@3.2.31
   '@depeng9527/eslint-config': 1.4.1_eslint@8.12.0+typescript@4.6.3
   '@types/node': 17.0.23
+  '@types/qs': 6.9.7
   '@typescript-eslint/eslint-plugin': 5.17.0_eslint@8.12.0+typescript@4.6.3
   eslint: 8.12.0
   sass: 1.49.11
@@ -1043,6 +1045,10 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
+  /@types/qs/6.9.7:
+    resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
+    dev: true
+
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
@@ -1561,7 +1567,6 @@ packages:
     dependencies:
       function-bind: 1.1.1
       get-intrinsic: 1.1.1
-    dev: true
 
   /callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
@@ -2635,7 +2640,6 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.3
-    dev: true
 
   /get-stream/6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
@@ -2716,7 +2720,6 @@ packages:
   /has-symbols/1.0.3:
     resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==}
     engines: {node: '>= 0.4'}
-    dev: true
 
   /has-tostringtag/1.0.0:
     resolution: {integrity: sha512-kFjcSNhnlGV1kyoGk7OXKSawH5JOb/LzUc5w9B02hOTO0dfFRjbHQKvg1d6cf3HbeUmtU9VbbV3qzZ2Teh97WQ==}
@@ -3295,7 +3298,6 @@ packages:
 
   /object-inspect/1.12.0:
     resolution: {integrity: sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==}
-    dev: true
 
   /object-keys/1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
@@ -3640,6 +3642,13 @@ packages:
     hasBin: true
     dev: true
 
+  /qs/6.10.3:
+    resolution: {integrity: sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.4
+    dev: false
+
   /qs/6.9.7:
     resolution: {integrity: sha512-IhMFgUmuNpyRfxA90umL7ByLlgRXu6tIfKPpF5TmcfRLlLCckfP/g3IQmju6jjpu+Hh8rA+2p6A27ZSPOOHdKw==}
     engines: {node: '>=0.6'}
@@ -3865,7 +3874,6 @@ packages:
       call-bind: 1.0.2
       get-intrinsic: 1.1.1
       object-inspect: 1.12.0
-    dev: true
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
@@ -4278,15 +4286,6 @@ packages:
       '@vue/runtime-dom': 3.2.31
       '@vue/server-renderer': 3.2.31_vue@3.2.31
       '@vue/shared': 3.2.31
-    dev: false
-
-  /vuex/4.0.2_vue@3.2.31:
-    resolution: {integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==}
-    peerDependencies:
-      vue: ^3.0.2
-    dependencies:
-      '@vue/devtools-api': 6.1.4
-      vue: 3.2.31
     dev: false
 
   /webpack-virtual-modules/0.4.3:

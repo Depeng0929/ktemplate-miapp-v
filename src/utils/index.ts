@@ -1,3 +1,2 @@
-export function test() {
-  console.log(1)
-}
+export * from './tools'
+export * from './env'

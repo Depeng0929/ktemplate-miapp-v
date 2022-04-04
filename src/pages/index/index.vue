@@ -1,15 +1,15 @@
 <template>
   <view>
-    <button type="primary" @click="onClick">
+    <button type="primary">
       页面主操作 Loading
     </button>
   </view>
 </template>
 
 <script setup lang="ts">
-const title = ref('Hello')
+import { onLoad } from '@dcloudio/uni-app'
 
-function onClick() {
-  title.value = 'kkk'
-}
+onLoad((options) => {
+  console.log(options)
+})
 </script>

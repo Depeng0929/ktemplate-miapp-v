@@ -46,9 +46,9 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3040320220325006",
     "@dcloudio/uni-ui": "^1.4.13",
     "@depeng9527/tools": "^2.2.3",
+    "qs": "^6.10.3",
     "vue": "^3.2.31",
-    "vue-i18n": "^9.1.9",
-    "vuex": "^4.0.2"
+    "vue-i18n": "^9.1.9"
   },
   "devDependencies": {
     "@dcloudio/types": "^2.5.18",
@@ -57,6 +57,7 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3040320220325006",
     "@depeng9527/eslint-config": "^1.4.1",
     "@types/node": "^17.0.23",
+    "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "eslint": "^8.12.0",
     "sass": "^1.49.11",
