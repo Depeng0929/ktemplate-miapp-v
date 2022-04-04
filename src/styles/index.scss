@@ -1,7 +1,6 @@
 @import "./vars.scss";
 @import "./common.scss";
 @import "./mixins.scss";
-@import "./animate.scss";
 
 page{
   padding: 0;
@@ -22,5 +21,5 @@ page.dark {
 // Custom styles for tailwind.config.ts
 .bth {
   background-color: var(--theme);
-  @apply px-4 py-1 rounded inline-block text-white cursor-pointer tracking-wide opacity-90 hover: opacity-100 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50 disabled:pointer-events-none;
+  @apply px-4 py-1 rounded inline-block text-white cursor-pointer tracking-wide opacity-90 hover__opacity-100 hover__cursor-default hover__bg-gray-600 hover__opacity-50 hover__pointer-events-none;
 }
