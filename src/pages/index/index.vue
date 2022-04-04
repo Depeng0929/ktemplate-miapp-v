@@ -3,7 +3,7 @@
     111
     <image class="logo" src="/static/logo.png" />
     <uni-badge text="1" />
-    <button type="primary">
+    <button type="primary" @click="onClick">
       页面主操作 Loading
     </button>
     <view class="text-area">
@@ -15,8 +15,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 const title = ref('Hello')
+
+function onClick() {
+  title.value = 'kkk'
+}
 </script>
 
 <style lang="scss">
