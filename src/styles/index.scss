@@ -1,3 +1,29 @@
-$uni-primary: red;
-$uni-primary-disable:#94bcff;
-$uni-primary-light: #d4e4ff;
+@import "./vars.scss";
+@import "./common.scss";
+@import "./mixins.scss";
+@import "./animate.scss";
+
+page{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; 
+  font-family: var(--font-family);
+}
+
+page {
+  background: transparent;
+}
+
+page.dark {
+  background: var(--dark);
+}
+
+// Custom styles for tailwind.config.ts
+.bth {
+  background-color: var(--theme);
+  @apply px-4 py-1 rounded inline-block text-white cursor-pointer tracking-wide opacity-90 hover: opacity-100 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50 disabled:pointer-events-none;
+}
