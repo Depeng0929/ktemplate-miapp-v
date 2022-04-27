@@ -1,4 +1,9 @@
-export function urlParam(json: Record<string, string>) {
+/**
+ * 组合url参数为字符串
+ * @param json {object} 参数对象
+ * @returns {string} 返回字符串
+ */
+export function urlParamStr(json: Record<string, string>) {
   if (!json) return ''
   return cleanArray(
     Object.keys(json).map((key) => {
