@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import AutoImport from 'unplugin-auto-import/vite'
 import WindiCSS from 'vite-plugin-windicss'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,6 +25,7 @@ export default defineConfig({
   plugins: [
     uni(),
     WindiCSS(),
+    Components(),
     AutoImport({
       imports: [
         'vue',
@@ -36,6 +38,16 @@ export default defineConfig({
         {
           '@depeng9527/tools': [
             'debug',
+          ],
+        },
+        {
+          '@dcloudio/uni-app': [
+            'onHide',
+            'onLaunch',
+            'onLoad',
+            'onReachBottom',
+            'onPullDownRefresh',
+            'onShareAppMessage',
           ],
         },
       ],
