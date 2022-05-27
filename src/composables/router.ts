@@ -1,7 +1,7 @@
 /**
  * like vue-router
  */
-import { urlParam } from '~/utils'
+import { urlParamStr } from '~/utils'
 
 class AppRouter {
   go(n: number) {
@@ -29,7 +29,7 @@ class AppRouter {
   }
 
   private setupParams(url: string, params: Record<string, string>) {
-    return url += `?${urlParam(params)}`
+    return url += `?${urlParamStr(params)}`
   }
 }
 

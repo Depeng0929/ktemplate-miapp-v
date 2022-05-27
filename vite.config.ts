@@ -42,6 +42,7 @@ export default defineConfig({
         },
         {
           '@dcloudio/uni-app': [
+            'onReady',
             'onHide',
             'onLaunch',
             'onLoad',

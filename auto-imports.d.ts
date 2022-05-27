@@ -29,6 +29,7 @@ declare global {
   const onMounted: typeof import('vue')['onMounted']
   const onPullDownRefresh: typeof import('@dcloudio/uni-app')['onPullDownRefresh']
   const onReachBottom: typeof import('@dcloudio/uni-app')['onReachBottom']
+  const onReady: typeof import('@dcloudio/uni-app')['onReady']
   const onRenderTracked: typeof import('vue')['onRenderTracked']
   const onRenderTriggered: typeof import('vue')['onRenderTriggered']
   const onScopeDispose: typeof import('vue')['onScopeDispose']

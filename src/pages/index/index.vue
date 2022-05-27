@@ -2,6 +2,8 @@
 import { useButton } from '~/composables/button'
 import Loading from '~/components/Loading.vue'
 
+
+
 function onClick() {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -10,6 +12,7 @@ function onClick() {
   })
 }
 const submit = reactive(useButton(onClick))
+
 
 </script>
 
