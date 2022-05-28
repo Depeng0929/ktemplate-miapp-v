@@ -16,6 +16,9 @@
     "types": [
       "@dcloudio/types",
       "vite/client",
+      "@dcloudio/uni-helper-json",
+      "mini-types",
+      "miniprogram-api-typings"
     ],
     "paths": {
       "~/*": ["src/*"]
