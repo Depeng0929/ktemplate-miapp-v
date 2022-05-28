@@ -1,0 +1,17 @@
+{
+  "files.associations": {
+    "pages.json": "jsonc",
+    "manifest.json": "jsonc"
+  },
+  "better-comments.tags":[
+    {
+      "tag": "#",
+      "color": "#18b566",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+     },
+  ]
+}
