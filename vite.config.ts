@@ -23,7 +23,11 @@ export default defineConfig({
     },
   },
   plugins: [
-    uni(),
+    uni({
+      vueOptions: {
+        reactivityTransform: true,
+      },
+    }),
     WindiCSS(),
     Components(),
     AutoImport({

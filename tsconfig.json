@@ -13,10 +13,10 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
     "types": [
       "@dcloudio/types",
       "vite/client",
-      "@dcloudio/uni-helper-json",
       "mini-types",
       "miniprogram-api-typings"
     ],
@@ -25,5 +25,5 @@
     },
     "jsx": "preserve"
   },
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules"],
 }
