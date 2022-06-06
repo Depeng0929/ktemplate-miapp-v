@@ -29,7 +29,10 @@ export default defineConfig({
       },
     }),
     WindiCSS(),
-    Components(),
+    Components({
+      dts: true,
+      types: [],
+    }),
     AutoImport({
       imports: [
         'vue',
