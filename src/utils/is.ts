@@ -22,8 +22,16 @@ function platform(): PLATHFORM {
   return result
 }
 
+// host environment
 export const isWeixin = platform() === PLATHFORM.WX
 export const isAlipay = platform() === PLATHFORM.ALIPAY
 export const isH5 = platform() === PLATHFORM.H5
 
+// budil environment
 export const isDev = process.env.NODE_ENV === 'development'
+export const isProd = process.env.NODE_ENV === 'production'
+
+// 是否是刘海屏幕
+export function isNotchScreen() {
+  return uni.getSystemInfoSync().safeAreaInsets?.bottom
+}
