@@ -36,6 +36,8 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
+        'vue/macros',
+        '@vueuse/core',
         {
           '~/composables/router': [
             'useRouter',
@@ -59,6 +61,10 @@ export default defineConfig({
           ],
         },
       ],
+      vueTemplate: true,
+      // dirs: [
+      //   './src/composables',
+      // ],
     }),
   ],
   css: {
