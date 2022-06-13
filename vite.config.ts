@@ -13,6 +13,9 @@ export default defineConfig({
     },
   },
   server: {
+    watch: {
+      usePolling: true,
+    },
     port: 8080,
     proxy: {
       '/api': {
