@@ -1,8 +1,8 @@
-import { MayBeRef } from "~/types";
+import type { MayBeRef } from '~/types'
 
 /**
  * clipboard
- * 
+ *
  * @example
  * ```
  * const { text, read, copy } = useClipboard()
@@ -17,24 +17,21 @@ export function useClipboard() {
   read()
 
   async function copy(t: MayBeRef<string>) {
-    if (unref(t)) {
+    if (unref(t))
       uni.setClipboardData({ data: unref(t) })
-    }
   }
 
   async function read() {
     uni.getClipboardData({
       success(res) {
         text.value = res.data
-      }
+      },
     })
   }
-
-
 
   return {
     text,
     copy,
-    read
+    read,
   }
 }
