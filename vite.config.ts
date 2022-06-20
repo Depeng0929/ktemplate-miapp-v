@@ -13,6 +13,9 @@ export default defineConfig({
     },
   },
   server: {
+    watch: {
+      usePolling: true,
+    },
     port: 8080,
     proxy: {
       '/api': {
@@ -29,10 +32,14 @@ export default defineConfig({
       },
     }),
     WindiCSS(),
-    Components(),
+    Components({
+      dts: true,
+      types: [],
+    }),
     AutoImport({
       imports: [
         'vue',
+        'vue/macros',
         {
           '~/composables/router': [
             'useRouter',
@@ -56,6 +63,10 @@ export default defineConfig({
           ],
         },
       ],
+      vueTemplate: true,
+      // dirs: [
+      //   './src/composables',
+      // ],
     }),
   ],
   css: {

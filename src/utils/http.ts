@@ -2,7 +2,7 @@ import type { AjaxResponse } from 'uni-ajax'
 import ajax from 'uni-ajax'
 
 const http = ajax.create({
-  baseURL: process.env.VUE_APP_API,
+  baseURL: import.meta.env.VITE_APP_API,
   header: {
     'content-type': 'application/json',
   },

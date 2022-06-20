@@ -1,2 +1,2 @@
 export * from './tools'
-export * from './env'
+export * from './is'

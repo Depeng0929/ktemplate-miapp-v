@@ -5,7 +5,7 @@ export function useList<T>(options: ListOptions<T>) {
   const {
     fetch,
     size = 10,
-    immediately = false,
+    immediately = true,
   } = options
 
   const list = ref<T[]>([]) as Ref<T[]>
