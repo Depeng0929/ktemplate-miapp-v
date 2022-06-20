@@ -2,6 +2,7 @@
   "name": "name",
   "version": "0.0.0",
   "scripts": {
+    "lint": "eslint '**/*.{js,ts,vue,json}' --fix",
     "dev": "npm run dev:h5",
     "dev:app": "uni -p app",
     "dev:custom": "uni -p",

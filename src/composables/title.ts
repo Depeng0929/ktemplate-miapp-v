@@ -1,10 +1,10 @@
-import { sleep } from "@depeng9527/tools"
-import { isString } from "windicss/utils"
-import type { MayBeRef } from "~/types"
+import { sleep } from '@depeng9527/tools'
+import { isString } from 'windicss/utils'
+import type { MayBeRef } from '~/types'
 
 /**
  * change document.title
- * 
+ *
  * @example
  * ```
  * const title = useTitle(kdp)
@@ -12,7 +12,7 @@ import type { MayBeRef } from "~/types"
  * ```
  */
 export function useTitle(
-  newTitle: MayBeRef<string | null | undefined> = null
+  newTitle: MayBeRef<string | null | undefined> = null,
 ) {
   const title = ref(newTitle ?? null)
 
@@ -21,7 +21,7 @@ export function useTitle(
   })
 
   watch(title, (t, o) => {
-    if(t !== o) {
+    if (t !== o) {
       sleep(500, () => {
         setTitle()
       })
@@ -31,7 +31,7 @@ export function useTitle(
   function setTitle() {
     if (isString(title.value) && title.value) {
       uni.setNavigationBarTitle({
-        title: title.value
+        title: title.value,
       })
     }
   }

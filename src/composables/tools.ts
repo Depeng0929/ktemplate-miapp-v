@@ -23,8 +23,8 @@ export function whenever<T>(source: WatchSource<T | false | null | undefined>, c
 }
 
 export function useLoading<T = any>(
-  promise:Promise<T> | ((...args: any[]) => Promise<T>), 
-  title: string = '加载中'
+  promise: Promise<T> | ((...args: any[]) => Promise<T>),
+  title = '加载中',
 ) {
   const state = shallowRef<T | null>(null)
   const isLoading = ref(false)
@@ -34,13 +34,13 @@ export function useLoading<T = any>(
 
   return {
     state,
-    isLoading
+    isLoading,
   }
 
   async function excute() {
     isLoading.value = true
     uni.showLoading({
-      title
+      title,
     })
     isLoading.value = true
     const _promise = typeof promise === 'function'

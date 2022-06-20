@@ -1,6 +1,6 @@
-import { MayBeRef } from "~/types"
+import type { MayBeRef } from '~/types'
 
-type ShareOptions = {
+interface ShareOptions {
   title: string
   path: `/${string}`
   imageUrl?: string
@@ -13,9 +13,9 @@ export function useShare(options: MayBeRef<ShareOptions>) {
     uni.showShareMenu({})
   })
 
-  //TODO: up for application
+  // TODO: up for application
   onBeforeUnmount(() => {
-    // @ts-expect-error
+    // @ts-expect-error uni type support?
     uni.hideShareMenu()
   })
 

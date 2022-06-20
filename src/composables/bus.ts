@@ -9,12 +9,12 @@ export type EventBusListener<T = unknown, P = any> = (payload?: P, event?: T) =>
  * ```
  * // config.js
  * const bus = useEventBus('refresh')
- * 
+ *
  * // 1.vue
  * bus.on((val) => {
  *  console.log(val)
  * })
- * 
+ *
  * // 2.vue
  * bus.emit('test')
  * ```
@@ -29,7 +29,6 @@ export function useEventBus<T extends string, P = any>(key: T) {
     const _off = () => off()
 
     // auto unsubscribe when scope get disposed
-    // @ts-expect-error vue3 and vue2 mis-align
     scope?.cleanups?.push(_off)
   }
 
