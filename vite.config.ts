@@ -26,16 +26,16 @@ export default defineConfig({
     },
   },
   plugins: [
+    Components({
+      dts: true,
+      types: [],
+    }),
     uni({
       vueOptions: {
         reactivityTransform: true,
       },
     }),
     WindiCSS(),
-    Components({
-      dts: true,
-      types: [],
-    }),
     AutoImport({
       imports: [
         'vue',

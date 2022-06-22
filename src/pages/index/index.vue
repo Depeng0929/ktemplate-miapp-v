@@ -21,6 +21,5 @@ const submit = reactive(useButton(onClick))
       2332
     </view>
     <uni-badge text="1" type="primary" />
-    <Loading />
   </view>
 </template>
