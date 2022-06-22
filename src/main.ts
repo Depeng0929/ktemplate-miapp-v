@@ -1,7 +1,6 @@
 import { createSSRApp } from 'vue'
 import App from './App.vue'
 
-import './styles/index.scss'
 import 'virtual:windi-components.css'
 import 'virtual:windi-utilities.css'
 
