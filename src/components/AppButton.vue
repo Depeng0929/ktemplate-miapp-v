@@ -28,9 +28,8 @@ function onClick(e: Event) {
 </script>
 
 <template>
-  <view class="w-9__10 mx-auto">
+  <view class="w-9/10 mx-auto">
     <button
-      type="primary"
       :loading="status.loading"
       :disabled="status.disabled"
       @click="onClick"

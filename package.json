@@ -56,6 +56,7 @@
     "vue-i18n": "^9.1.10"
   },
   "devDependencies": {
+    "@dcasia/mini-program-tailwind-webpack-plugin": "^1.4.2",
     "@dcloudio/types": "^3.0.6",
     "@dcloudio/uni-automator": "^3.0.0-alpha-3050020220622003",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3050020220622003",
