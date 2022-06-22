@@ -1,3 +1,6 @@
 {
-  "extends": "@depeng9527/eslint-config"
+  "extends": "@depeng9527/eslint-config",
+  "rules": {
+    "vue/no-setup-props-destructure": "off"
+  }
 }

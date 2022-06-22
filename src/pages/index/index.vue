@@ -14,9 +14,9 @@ const submit = reactive(useButton(onClick))
 
 <template>
   <view class="h-full">
-    <button type="primary" :loading="submit.status.loading" :disabled="submit.status.disabled" @click="submit.onClick">
-      页面主操作 Loading
-    </button>
+    <AppButton :status="submit.status" @click="submit.onClick">
+      点我
+    </AppButton>
     <view class="mt-4 w-full border bg-theme">
       2332
     </view>

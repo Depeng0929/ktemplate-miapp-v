@@ -1,5 +1,9 @@
 import { debounce } from '@depeng9527/tools'
 
+export interface ButtonStatus {
+  loading: boolean
+  disabled: boolean
+}
 /**
  * debonce button hooks
  *
@@ -18,7 +22,7 @@ import { debounce } from '@depeng9527/tools'
  * ```
  */
 export function useButton(promiseFn: (...args: unknown[]) => Promise<unknown>) {
-  const status = ref({
+  const status = ref<ButtonStatus>({
     loading: false,
     disabled: false,
   })
