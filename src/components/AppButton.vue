@@ -47,10 +47,10 @@ function onClick(e: Event) {
   border-color: var(--theme);
   @apply rounded block  text-white cursor-pointer;
 
-  &.hover {
+  &.hover, &:hover {
     @apply opacity-70;
   }
-  &[disabled] {
+  &[disabled], &:disabled {
     @apply cursor-default opacity-50;
     border-color: var(--theme)!important;
     background-color: var(--theme)!important;

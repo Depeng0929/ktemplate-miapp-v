@@ -71,75 +71,76 @@ declare global {
   const watchSyncEffect: typeof import('vue')['watchSyncEffect']
 }
 // for vue template auto import
-declare module 'vue' {
+import { UnwrapRef } from 'vue'
+declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $$: typeof import('vue/macros')['$$']
-    $: typeof import('vue/macros')['$']
-    $computed: typeof import('vue/macros')['$computed']
-    $customRef: typeof import('vue/macros')['$customRef']
-    $ref: typeof import('vue/macros')['$ref']
-    $shallowRef: typeof import('vue/macros')['$shallowRef']
-    $toRef: typeof import('vue/macros')['$toRef']
-    EffectScope: typeof import('vue')['EffectScope']
-    computed: typeof import('vue')['computed']
-    createApp: typeof import('vue')['createApp']
-    customRef: typeof import('vue')['customRef']
-    debug: typeof import('@depeng9527/tools')['debug']
-    defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
-    defineComponent: typeof import('vue')['defineComponent']
-    effectScope: typeof import('vue')['effectScope']
-    getCurrentInstance: typeof import('vue')['getCurrentInstance']
-    getCurrentScope: typeof import('vue')['getCurrentScope']
-    h: typeof import('vue')['h']
-    inject: typeof import('vue')['inject']
-    isProxy: typeof import('vue')['isProxy']
-    isReactive: typeof import('vue')['isReactive']
-    isReadonly: typeof import('vue')['isReadonly']
-    isRef: typeof import('vue')['isRef']
-    markRaw: typeof import('vue')['markRaw']
-    nextTick: typeof import('vue')['nextTick']
-    onActivated: typeof import('vue')['onActivated']
-    onBeforeMount: typeof import('vue')['onBeforeMount']
-    onBeforeUnmount: typeof import('vue')['onBeforeUnmount']
-    onBeforeUpdate: typeof import('vue')['onBeforeUpdate']
-    onDeactivated: typeof import('vue')['onDeactivated']
-    onErrorCaptured: typeof import('vue')['onErrorCaptured']
-    onHide: typeof import('@dcloudio/uni-app')['onHide']
-    onLaunch: typeof import('@dcloudio/uni-app')['onLaunch']
-    onLoad: typeof import('@dcloudio/uni-app')['onLoad']
-    onMounted: typeof import('vue')['onMounted']
-    onPullDownRefresh: typeof import('@dcloudio/uni-app')['onPullDownRefresh']
-    onReachBottom: typeof import('@dcloudio/uni-app')['onReachBottom']
-    onReady: typeof import('@dcloudio/uni-app')['onReady']
-    onRenderTracked: typeof import('vue')['onRenderTracked']
-    onRenderTriggered: typeof import('vue')['onRenderTriggered']
-    onScopeDispose: typeof import('vue')['onScopeDispose']
-    onServerPrefetch: typeof import('vue')['onServerPrefetch']
-    onShareAppMessage: typeof import('@dcloudio/uni-app')['onShareAppMessage']
-    onUnmounted: typeof import('vue')['onUnmounted']
-    onUpdated: typeof import('vue')['onUpdated']
-    provide: typeof import('vue')['provide']
-    reactive: typeof import('vue')['reactive']
-    readonly: typeof import('vue')['readonly']
-    ref: typeof import('vue')['ref']
-    resolveComponent: typeof import('vue')['resolveComponent']
-    shallowReactive: typeof import('vue')['shallowReactive']
-    shallowReadonly: typeof import('vue')['shallowReadonly']
-    shallowRef: typeof import('vue')['shallowRef']
-    toRaw: typeof import('vue')['toRaw']
-    toRef: typeof import('vue')['toRef']
-    toRefs: typeof import('vue')['toRefs']
-    triggerRef: typeof import('vue')['triggerRef']
-    unref: typeof import('vue')['unref']
-    useAttrs: typeof import('vue')['useAttrs']
-    useCssModule: typeof import('vue')['useCssModule']
-    useCssVars: typeof import('vue')['useCssVars']
-    useRoute: typeof import('~/composables/router')['useRoute']
-    useRouter: typeof import('~/composables/router')['useRouter']
-    useSlots: typeof import('vue')['useSlots']
-    watch: typeof import('vue')['watch']
-    watchEffect: typeof import('vue')['watchEffect']
-    watchPostEffect: typeof import('vue')['watchPostEffect']
-    watchSyncEffect: typeof import('vue')['watchSyncEffect']
+    readonly $$: UnwrapRef<typeof import('vue/macros')['$$']>
+    readonly $: UnwrapRef<typeof import('vue/macros')['$']>
+    readonly $computed: UnwrapRef<typeof import('vue/macros')['$computed']>
+    readonly $customRef: UnwrapRef<typeof import('vue/macros')['$customRef']>
+    readonly $ref: UnwrapRef<typeof import('vue/macros')['$ref']>
+    readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
+    readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
+    readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly computed: UnwrapRef<typeof import('vue')['computed']>
+    readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
+    readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly debug: UnwrapRef<typeof import('@depeng9527/tools')['debug']>
+    readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
+    readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
+    readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
+    readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
+    readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
+    readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
+    readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
+    readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
+    readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
+    readonly onBeforeUpdate: UnwrapRef<typeof import('vue')['onBeforeUpdate']>
+    readonly onDeactivated: UnwrapRef<typeof import('vue')['onDeactivated']>
+    readonly onErrorCaptured: UnwrapRef<typeof import('vue')['onErrorCaptured']>
+    readonly onHide: UnwrapRef<typeof import('@dcloudio/uni-app')['onHide']>
+    readonly onLaunch: UnwrapRef<typeof import('@dcloudio/uni-app')['onLaunch']>
+    readonly onLoad: UnwrapRef<typeof import('@dcloudio/uni-app')['onLoad']>
+    readonly onMounted: UnwrapRef<typeof import('vue')['onMounted']>
+    readonly onPullDownRefresh: UnwrapRef<typeof import('@dcloudio/uni-app')['onPullDownRefresh']>
+    readonly onReachBottom: UnwrapRef<typeof import('@dcloudio/uni-app')['onReachBottom']>
+    readonly onReady: UnwrapRef<typeof import('@dcloudio/uni-app')['onReady']>
+    readonly onRenderTracked: UnwrapRef<typeof import('vue')['onRenderTracked']>
+    readonly onRenderTriggered: UnwrapRef<typeof import('vue')['onRenderTriggered']>
+    readonly onScopeDispose: UnwrapRef<typeof import('vue')['onScopeDispose']>
+    readonly onServerPrefetch: UnwrapRef<typeof import('vue')['onServerPrefetch']>
+    readonly onShareAppMessage: UnwrapRef<typeof import('@dcloudio/uni-app')['onShareAppMessage']>
+    readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
+    readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
+    readonly provide: UnwrapRef<typeof import('vue')['provide']>
+    readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
+    readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
+    readonly ref: UnwrapRef<typeof import('vue')['ref']>
+    readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
+    readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
+    readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
+    readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
+    readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
+    readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
+    readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
+    readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
+    readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useRoute: UnwrapRef<typeof import('~/composables/router')['useRoute']>
+    readonly useRouter: UnwrapRef<typeof import('~/composables/router')['useRouter']>
+    readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly watch: UnwrapRef<typeof import('vue')['watch']>
+    readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
+    readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
+    readonly watchSyncEffect: UnwrapRef<typeof import('vue')['watchSyncEffect']>
   }
 }
