@@ -21,5 +21,9 @@ const submit = reactive(useButton(onClick))
       2332
     </view>
     <uni-badge text="1" type="primary" />
+
+    <view v-for="i in 100" :key="i">
+      {{ i }}
+    </view>
   </AppPage>
 </template>

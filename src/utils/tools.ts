@@ -11,15 +11,15 @@ export function urlParamStr(json: Record<string, string>) {
       return `${encodeURIComponent(key)}=${encodeURIComponent(json[key])}`
     }),
   ).join('&')
-}
 
-export function cleanArray(actual: string[]) {
-  const newArray = []
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i])
-      newArray.push(actual[i])
+  function cleanArray(actual: string[]) {
+    const newArray = []
+    for (let i = 0; i < actual.length; i++) {
+      if (actual[i])
+        newArray.push(actual[i])
+    }
+    return newArray
   }
-  return newArray
 }
 
 export const alert = function(msg: string, callback: any = null) {
