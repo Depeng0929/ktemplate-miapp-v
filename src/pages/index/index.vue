@@ -5,7 +5,7 @@ function onClick() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(1)
-    }, 2000)
+    }, 10000)
   })
 }
 const submit = reactive(useButton(onClick))

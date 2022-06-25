@@ -58,9 +58,10 @@ function onClick(e: Event) {
     @apply opacity-90;
   }
   &[disabled], &:disabled {
-    @apply cursor-default opacity-50 text-white;
+    @apply cursor-default opacity-50;
     border-color: var(--theme)!important;
     background-color: var(--theme)!important;
+    color: #fff!important;
   }
 }
 

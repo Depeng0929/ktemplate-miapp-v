@@ -8,7 +8,6 @@ declare module '@vue/runtime-core' {
     AppButton: typeof import('./components/AppButton.vue')['default']
     AppPage: typeof import('./components/AppPage/index.vue')['default']
     List: typeof import('./components/List.vue')['default']
-    Picker: typeof import('./components/AppPage/Picker.vue')['default']
     Skeleton: typeof import('./components/Skeleton.vue')['default']
   }
 }
