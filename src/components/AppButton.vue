@@ -37,7 +37,6 @@ function onClick(e: Event) {
     <button
       class="app-button"
       :class="buttonStyles"
-      hover-class="hover"
       :loading="status.loading"
       :disabled="status.disabled"
       @click="onClick"
@@ -50,15 +49,14 @@ function onClick(e: Event) {
 <style lang="scss">
 .app-button {
   background-color: var(--theme);
-  border-color: var(--theme);
+  border: 0 none;
   font-size: 14px;
   @apply rounded text-white cursor-pointer px-4 py-1 ;
-
-  &.hover, &:hover {
-    @apply opacity-90;
+  &::after {
+    border: none;
   }
   &[disabled], &:disabled {
-    @apply cursor-default opacity-50;
+    @apply cursor-default opacity-70;
     border-color: var(--theme)!important;
     background-color: var(--theme)!important;
     color: #fff!important;
