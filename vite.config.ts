@@ -28,8 +28,8 @@ export default defineConfig({
   },
   plugins: [
     Components({
-      dts: true,
       types: [],
+      dts: 'src/components.d.ts',
     }),
     uni({
       vueOptions: {
@@ -66,6 +66,7 @@ export default defineConfig({
         },
       ],
       vueTemplate: true,
+      dts: 'src/auto-imports.d.ts',
       // dirs: [
       //   './src/composables',
       // ],
