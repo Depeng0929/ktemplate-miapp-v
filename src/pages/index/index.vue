@@ -13,7 +13,7 @@ const submit = reactive(useButton(onClick))
 </script>
 
 <template>
-  <view class="h-full">
+  <AppPage>
     <AppButton :status="submit.status" @click="submit.onClick">
       点我
     </AppButton>
@@ -21,5 +21,5 @@ const submit = reactive(useButton(onClick))
       2332
     </view>
     <uni-badge text="1" type="primary" />
-  </view>
+  </AppPage>
 </template>
