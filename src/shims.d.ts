@@ -10,3 +10,9 @@ declare namespace NodeJS {
     VUE_APP_API: string
   }
 }
+
+declare interface MinappEvent {
+  detail: {
+    value: any
+  }
+}

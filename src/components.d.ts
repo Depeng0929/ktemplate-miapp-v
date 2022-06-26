@@ -7,6 +7,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./components/AppButton.vue')['default']
     AppPage: typeof import('./components/AppPage/index.vue')['default']
+    AppPicker: typeof import('./components/AppPicker/index.vue')['default']
     Auth: typeof import('./components/AppPage/Auth.vue')['default']
     List: typeof import('./components/List.vue')['default']
     Skeleton: typeof import('./components/Skeleton.vue')['default']

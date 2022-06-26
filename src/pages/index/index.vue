@@ -10,15 +10,31 @@ function onClick() {
 }
 const submit = reactive(useButton(onClick))
 
+const list = [
+  { key: 10, name: 'woshi1' },
+  { key: 11, name: 'woshi2' },
+  { key: 12, name: 'woshi3' },
+]
+const current = ref('')
+
 </script>
 
 <template>
   <AppPage>
-    <AppButton :status="submit.status" @click="submit.onClick">
-      点我
-    </AppButton>
+    <AppPicker
+      v-model="current"
+      mode="selector"
+      :list="list"
+    >
+      <template #default="slotProps">
+        <AppButton :status="submit.status" @click="submit.onClick">
+          {{ slotProps.value }}
+        </AppButton>
+      </template>
+    </AppPicker>
+
     <view class="mt-4 w-full border bg-theme">
-      2332
+      {{ current }}
     </view>
     <uni-badge text="1" type="primary" />
 
