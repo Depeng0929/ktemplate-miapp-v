@@ -15,6 +15,10 @@ const emit = defineEmits(['change', 'update:modelValue'])
 const picker = createPicker(props.mode!)
 
 function createPicker(mode: PickerMode) {
+  if (!pickerStrategies[mode]) {
+    console.error('mode暂不支持此属性')
+    return
+  }
   return pickerStrategies[mode](props, emit)
 }
 
