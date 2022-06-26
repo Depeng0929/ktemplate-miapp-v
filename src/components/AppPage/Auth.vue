@@ -1,12 +1,15 @@
 <script setup lang='ts'>
-const props = defineProps<{
-  modelValue?: boolean
-}>()
+import { pagAllowAccess } from '~/logic/permission'
+const route = useRoute()
+
+const AllowAccess = $computed(() => {
+  return pagAllowAccess(route.path!)
+})
 
 </script>
 
 <template>
-  <template v-if="true">
+  <template v-if="AllowAccess">
     <slot />
   </template>
 </template>

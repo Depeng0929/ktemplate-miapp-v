@@ -1,6 +1,7 @@
 /**
  * like vue-router
  */
+import { pagAllowAccess } from '~/logic/permission'
 import { urlParamStr } from '~/utils'
 
 class AppRouter {
@@ -11,20 +12,38 @@ class AppRouter {
   }
 
   push(url: string, params: Record<string, string>) {
-    return uni.navigateTo({
-      url: this.setupParams(url, params),
-    })
+    return this.checkPermission(url)
+      .then(() => {
+        return uni.navigateTo({
+          url: this.setupParams(url, params),
+        })
+      })
   }
 
   replace(url: string, params: Record<string, string>) {
-    return uni.redirectTo({
-      url: this.setupParams(url, params),
-    })
+    return this.checkPermission(url)
+      .then(() => {
+        return uni.redirectTo({
+          url: this.setupParams(url, params),
+        })
+      })
   }
 
   switch(url: string) {
-    return uni.switchTab({
-      url,
+    return this.checkPermission(url)
+      .then(() => {
+        return uni.switchTab({
+          url,
+        })
+      })
+  }
+
+  private checkPermission(url: string) {
+    return new Promise((resolve, reject) => {
+      if (pagAllowAccess(url))
+        resolve(true)
+      else
+        reject(new Error('Not Allow Access'))
     })
   }
 
