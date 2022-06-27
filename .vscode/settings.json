@@ -13,5 +13,6 @@
       "bold": true,
       "italic": false
      },
-  ]
+  ],
+  "scss.lint.unknownAtRules": "ignore"
 }
