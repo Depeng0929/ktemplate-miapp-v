@@ -64,6 +64,6 @@ export function useRoute<T extends Object>() {
 
   return {
     path: page.route,
-    query: parseOnLoadOptions<T>(options),
+    query: parseOnLoadOptions<T>(options || {}),
   }
 }
