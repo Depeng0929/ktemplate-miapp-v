@@ -2,7 +2,8 @@
  * like vue-router
  */
 import { pagAllowAccess } from '~/logic/permission'
-import { urlParamStr } from '~/utils'
+import type { IOnloadOptions } from '~/types'
+import { parseOnLoadOptions, urlParamStr } from '~/utils'
 
 class AppRouter {
   go(n: number) {
@@ -56,11 +57,13 @@ export function useRouter() {
   return new AppRouter()
 }
 
-export function useRoute() {
+export function useRoute<T extends Object>() {
   const pages = getCurrentPages()
   const page = pages[pages.length - 1]
+  const options = (page as any).options as IOnloadOptions<T>
+
   return {
     path: page.route,
-    query: (page as any).options,
+    query: parseOnLoadOptions<T>(options),
   }
 }

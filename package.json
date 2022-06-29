@@ -2,6 +2,7 @@
   "name": "name",
   "version": "0.0.0",
   "scripts": {
+    "test": "vitest",
     "lint": "eslint '**/*.{js,ts,vue,json}' --fix",
     "build:app": "uni build -p app",
     "build:custom": "uni build -p",
@@ -75,6 +76,7 @@
     "unplugin-vue-components": "^0.20.1",
     "vite": "^2.9.13",
     "vite-plugin-windicss": "^1.8.5",
+    "vitest": "^0.16.0",
     "vue-demi": "^0.13.1",
     "windicss": "^3.5.5"
   }

@@ -1,11 +1,12 @@
 import type { WatchCallback, WatchOptions, WatchSource } from 'vue'
 import { watch } from 'vue'
+import { parseOnLoadOptions } from '~/utils'
 
-export function useuseSearchParams() {
-  const params = ref({})
+export function useSearchParams<T extends Record<string, string>>() {
+  const params = ref<T>({} as T)
 
   onLoad((options) => {
-    params.value = options
+    params.value = parseOnLoadOptions<T>(options as T)
   })
 
   return params

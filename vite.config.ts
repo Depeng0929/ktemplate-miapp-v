@@ -1,5 +1,5 @@
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import uni from '@dcloudio/vite-plugin-uni'
 import AutoImport from 'unplugin-auto-import/vite'
 import WindiCSS from 'vite-plugin-windicss'
@@ -8,6 +8,7 @@ import MiniProgramTailwind from '@dcasia/mini-program-tailwind-webpack-plugin/ro
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  test: {},
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -49,6 +50,15 @@ export default defineConfig({
           ],
         },
         {
+          '~/utils/tools': [
+            'toast',
+            'alert',
+            'confirm',
+            'showLoading',
+            'hideLoading',
+          ],
+        },
+        {
           '@depeng9527/tools': [
             'debug',
           ],
@@ -79,4 +89,5 @@ export default defineConfig({
       },
     },
   },
+
 })

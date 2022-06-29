@@ -16,7 +16,6 @@ const list = [
   { key: 12, name: 'woshi3' },
 ]
 const current = ref('')
-
 </script>
 
 <template>
