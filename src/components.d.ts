@@ -3,6 +3,8 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
+export {}
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./components/AppButton.vue')['default']
@@ -12,6 +14,5 @@ declare module '@vue/runtime-core' {
     List: typeof import('./components/List.vue')['default']
     Skeleton: typeof import('./components/Skeleton.vue')['default']
   }
-}
 
-export {}
+}
