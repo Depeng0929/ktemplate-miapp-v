@@ -49,6 +49,7 @@
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3050120220701001",
     "@dcloudio/uni-ui": "^1.4.16",
     "@depeng9527/tools": "^2.2.8",
+    "@uni-ui/code-ui": "^1.4.8",
     "await-to-js": "^3.0.0",
     "pinia": "^2.0.14",
     "qs": "^6.11.0",

@@ -25,6 +25,7 @@ specifiers:
   '@types/node': ^18.0.0
   '@types/qs': ^6.9.7
   '@typescript-eslint/eslint-plugin': ^5.30.3
+  '@uni-ui/code-ui': ^1.4.8
   await-to-js: ^3.0.0
   eslint: ^8.19.0
   mini-types: ^0.1.7
@@ -60,6 +61,7 @@ dependencies:
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3050120220701001_vue@3.2.37
   '@dcloudio/uni-ui': 1.4.16
   '@depeng9527/tools': 2.2.8
+  '@uni-ui/code-ui': 1.4.8
   await-to-js: 3.0.0
   pinia: 2.0.14_j6bzmzd4ujpabbp5objtwxyjp4
   qs: 6.11.0
@@ -1443,6 +1445,16 @@ packages:
       '@typescript-eslint/types': 5.30.3
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@uni-ui/code-plugs/1.9.3:
+    resolution: {integrity: sha512-h9xig/KayrD7Gj1Y21d2xvnlwbP0nHwVBskWjBy2FmENWkFgRnbGpDwKvwzesr0LW0J9PYaJsi8x3nxxJ+v/GQ==}
+    dev: false
+
+  /@uni-ui/code-ui/1.4.8:
+    resolution: {integrity: sha512-LQLQS8AWVOw72I8kEXLGZrLE6vhlwCu2DUbYdFeuPFBZfMvVN3W1NwbqpoXsLgXBHt0440cC++Usd4GR9ISrLQ==}
+    dependencies:
+      '@uni-ui/code-plugs': 1.9.3
+    dev: false
 
   /@vitejs/plugin-legacy/1.8.2_vite@2.9.13:
     resolution: {integrity: sha512-NCOKU+pU+cxLMR9P9RTolEuOK+h+zYBXlknj+zGcKSj/NXBZYgA1GAH1FnO4zijoWRiTaiOm2ha9LQrELE7XHg==}

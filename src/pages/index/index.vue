@@ -42,6 +42,8 @@ const current = ref('')
     </view>
     <uni-badge text="1" type="primary" />
 
+    <QRcode code="https://qm.qq.com/cgi-bin/qm/qr?k=LKqML292dD2WvwQfAJXBUmvgbiB_TZWF&noverify=0" />
+
     <view v-for="i in 100" :key="i">
       {{ i }}
     </view>
