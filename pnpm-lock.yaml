@@ -30,6 +30,7 @@ specifiers:
   eslint: ^8.19.0
   mini-types: ^0.1.7
   miniprogram-api-typings: ^3.5.0
+  mp-html: ^2.3.1
   pinia: ^2.0.14
   qs: ^6.11.0
   rambda: ^7.1.4
@@ -63,6 +64,7 @@ dependencies:
   '@depeng9527/tools': 2.2.8
   '@uni-ui/code-ui': 1.4.8
   await-to-js: 3.0.0
+  mp-html: 2.3.1
   pinia: 2.0.14_j6bzmzd4ujpabbp5objtwxyjp4
   qs: 6.11.0
   rambda: 7.1.4
@@ -3702,6 +3704,10 @@ packages:
 
   /module-alias/2.2.2:
     resolution: {integrity: sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==}
+
+  /mp-html/2.3.1:
+    resolution: {integrity: sha512-ltHmJVxmgvlcW9tmNUjkgn/491Q6xHBL484yvlVNWmKscGgNfXycvdmM981PaDnrDDSA59YPFDo1736B6S1zRg==}
+    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}

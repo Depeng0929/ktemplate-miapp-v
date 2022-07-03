@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     Auth: typeof import('./components/AppPage/Auth.vue')['default']
     List: typeof import('./components/List.vue')['default']
     QRcode: typeof import('./components/QRcode/index.vue')['default']
+    Reader: typeof import('./components/Reader.vue')['default']
     Skeleton: typeof import('./components/Skeleton.vue')['default']
   }
 

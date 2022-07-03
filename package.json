@@ -51,6 +51,7 @@
     "@depeng9527/tools": "^2.2.8",
     "@uni-ui/code-ui": "^1.4.8",
     "await-to-js": "^3.0.0",
+    "mp-html": "^2.3.1",
     "pinia": "^2.0.14",
     "qs": "^6.11.0",
     "rambda": "^7.1.4",
