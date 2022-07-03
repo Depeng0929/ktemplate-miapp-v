@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { useButton } from '~/composables/button'
+import { useUserStore } from '~/store/user'
+
+const userStore = useUserStore()
+
+console.log(userStore.token)
 
 function onClick() {
   return new Promise((resolve) => {

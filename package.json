@@ -50,6 +50,7 @@
     "@dcloudio/uni-ui": "^1.4.16",
     "@depeng9527/tools": "^2.2.8",
     "await-to-js": "^3.0.0",
+    "pinia": "^2.0.14",
     "qs": "^6.11.0",
     "rambda": "^7.1.4",
     "uni-ajax": "^3.0.0",
