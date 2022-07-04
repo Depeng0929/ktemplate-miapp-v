@@ -19,7 +19,7 @@ function createPicker(mode: PickerMode) {
     console.error('mode暂不支持此属性')
     return null
   }
-  return pickerStrategies[mode](props, emit)
+  return reactive(pickerStrategies[mode](props, emit))
 }
 
 </script>
@@ -27,7 +27,7 @@ function createPicker(mode: PickerMode) {
 <template>
   <picker
     v-if="picker"
-    :value="picker.current"
+    :value="picker.index"
     :mode="picker.mode"
     :range="list"
     range-key="name"

@@ -10,6 +10,10 @@ export function datePicker(
   let current = $ref(props.modelValue)
   const text = $computed(() => current)
 
+  const index = $computed(() => {
+    return current
+  })
+
   watch(() => props.modelValue, (val) => {
     current = val!
   })
@@ -27,6 +31,7 @@ export function datePicker(
   return $$({
     mode: 'date',
     current,
+    index,
     text,
     onChange,
   })
@@ -40,6 +45,11 @@ export function selectorPicker(
   const text = $computed(() => {
     if (!props.list?.length || props.modelValue === '') return ''
     return find(current, props.list)
+  })
+  const index = $computed(() => {
+    if (!props.list?.length || props.modelValue === '') return 0
+
+    return props.list.findIndex(item => item.key === current)
   })
 
   watch(() => props.modelValue, (val) => {
@@ -63,6 +73,7 @@ export function selectorPicker(
   return $$({
     mode: 'selector',
     current,
+    index,
     text,
     onChange,
   })

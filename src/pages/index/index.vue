@@ -24,7 +24,7 @@ const html = '<p class="ql-align-justify"><img src="https://api.sqlyc.com.cn:244
   <AppPage>
     <AppPicker
       v-model="current"
-      mode="selector"
+      mode="date"
       :list="list"
     >
       <template #default="slotProps">
