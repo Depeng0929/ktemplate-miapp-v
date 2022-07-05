@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     AppPicker: typeof import('./components/AppPicker/index.vue')['default']
     Auth: typeof import('./components/AppPage/Auth.vue')['default']
     List: typeof import('./components/List.vue')['default']
+    Preload: typeof import('./components/AppPage/Preload.vue')['default']
     QRcode: typeof import('./components/QRcode/index.vue')['default']
     Reader: typeof import('./components/Reader.vue')['default']
     Skeleton: typeof import('./components/Skeleton.vue')['default']

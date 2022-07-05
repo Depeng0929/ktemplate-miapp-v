@@ -8,16 +8,18 @@ import MiniProgramTailwind from '@dcasia/mini-program-tailwind-webpack-plugin/ro
 
 export default defineConfig({
   test: {},
-  build: {
-    // TODO: change false in production
-    sourcemap: true,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
+  build: process.env.NODE_ENV === 'production'
+    ? {
+      // TODO: change false in production
+      sourcemap: true,
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
       },
-    },
-  },
+    }
+    : undefined,
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,

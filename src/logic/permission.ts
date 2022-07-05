@@ -1,13 +1,51 @@
-import { ensurePrefix } from '@depeng9527/tools'
+import { ensurePrefix, sleep } from '@depeng9527/tools'
 
-export function pageAllowAccess(url: string) {
+export function pageInWhiteList(url: string) {
   const path = ensurePrefix('/', url)
-  const tabBarPages = [
+  // TODO: add page white list
+  const whiteList: string[] = [
     '/pages/index/index',
   ]
-  const inWhitePageList = tabBarPages.includes(path)
+  return whiteList.includes(path)
+}
 
-  const hasLoggedIn = true
+export function pageAllowAccess(url: string) {
+  // TODO: maybe token exist
+  const hasLogin = true
 
-  return inWhitePageList || hasLoggedIn
+  return pageInWhiteList(url) || hasLogin
+}
+
+// 如果当前页面需要预请求，使用此方法
+// 该方法与AppPage强联系
+export const loading = ref(false)
+export const error = shallowRef(null)
+export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T>|T) {
+  const data = ref<T | null>(null)
+  const route = useRoute()
+
+  init()
+
+  async function init() {
+    if (pageInWhiteList(route.path!)) {
+      data.value = await fn() as any
+      return
+    }
+
+    // TODO: fetch userInfo
+    loading.value = true
+    await sleep(1000)
+      .catch((err) => {
+        error.value = err
+      })
+    loading.value = false
+
+    data.value = await fn() as any
+  }
+
+  return {
+    loading,
+    error,
+    data,
+  }
 }
