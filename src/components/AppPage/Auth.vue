@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { pagAllowAccess } from '~/logic/permission'
+import { pageAllowAccess } from '~/logic/permission'
 const route = useRoute()
 
 const AllowAccess = $computed(() => {
-  return pagAllowAccess(route.path!)
+  return pageAllowAccess(route.path!)
 })
 
 </script>

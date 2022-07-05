@@ -1,7 +1,7 @@
 /**
  * like vue-router
  */
-import { pagAllowAccess } from '~/logic/permission'
+import { pageAllowAccess } from '~/logic/permission'
 import type { IOnloadOptions } from '~/types'
 import { parseOnLoadOptions, urlParamStr } from '~/utils'
 
@@ -41,7 +41,7 @@ class AppRouter {
 
   private checkPermission(url: string) {
     return new Promise((resolve, reject) => {
-      if (pagAllowAccess(url))
+      if (pageAllowAccess(url))
         resolve(true)
       else
         reject(new Error('Not Allow Access'))

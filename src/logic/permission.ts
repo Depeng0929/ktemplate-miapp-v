@@ -1,6 +1,6 @@
 import { ensurePrefix } from '@depeng9527/tools'
 
-export function pagAllowAccess(url: string) {
+export function pageAllowAccess(url: string) {
   const path = ensurePrefix('/', url)
   const tabBarPages = [
     '/pages/index/index',
