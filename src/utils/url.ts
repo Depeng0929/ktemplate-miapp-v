@@ -1,4 +1,4 @@
-import { isString } from 'windicss/utils'
+import { isString } from '@depeng9527/tools'
 import type { IOnloadOptions } from '~/types'
 
 /**
