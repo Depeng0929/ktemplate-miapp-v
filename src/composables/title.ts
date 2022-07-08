@@ -1,5 +1,4 @@
-import { sleep } from '@depeng9527/tools'
-import { isString } from 'windicss/utils'
+import { isString, sleep } from '@depeng9527/tools'
 import type { MayBeRef } from '~/types'
 
 /**
