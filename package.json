@@ -49,12 +49,12 @@
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3050120220706001",
     "@dcloudio/uni-ui": "^1.4.19",
     "@depeng9527/tools": "^2.2.8",
-    "@uni-ui/code-ui": "^1.4.8",
     "await-to-js": "^3.0.0",
     "mp-html": "^2.3.1",
     "pinia": "^2.0.14",
     "qs": "^6.11.0",
     "rambda": "^7.1.4",
+    "u-qrcode": "^3.2.2",
     "uni-ajax": "^3.0.0",
     "vue": "^3.2.37",
     "vue-i18n": "^9.1.10"
