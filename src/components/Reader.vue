@@ -18,7 +18,7 @@ function process(str: string) {
   return transformCssRem(str)
 
   function transformCssRem(str: string) {
-    if (isAlipay) return str
+    if (!isAlipay) return str
 
     return str.replace(/(\d+(\.\d{1,2})?)rem/mg, (matchs, m1) => {
       return `${m1 * ROOT_REM}px`
