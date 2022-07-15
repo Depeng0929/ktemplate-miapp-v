@@ -17,4 +17,5 @@ declare module '@vue/runtime-core' {
     Reader: typeof import('./src/components/Reader.vue')['default']
     Skeleton: typeof import('./src/components/Skeleton.vue')['default']
   }
+
 }
