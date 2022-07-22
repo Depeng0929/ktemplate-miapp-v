@@ -67,6 +67,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
+  const useFetch: typeof import('~/logic/fetch')['useFetch']
   const useRoute: typeof import('~/composables/router')['useRoute']
   const useRouter: typeof import('~/composables/router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
@@ -145,6 +146,7 @@ declare module '@vue/runtime-core' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
+    readonly useFetch: UnwrapRef<typeof import('~/logic/fetch')['useFetch']>
     readonly useRoute: UnwrapRef<typeof import('~/composables/router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('~/composables/router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>

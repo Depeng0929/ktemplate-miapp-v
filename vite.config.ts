@@ -1,10 +1,10 @@
-import path from 'path'
-import { defineConfig } from 'vitest/config'
-import uni from '@dcloudio/vite-plugin-uni'
-import AutoImport from 'unplugin-auto-import/vite'
-import WindiCSS from 'vite-plugin-windicss'
-import Components from 'unplugin-vue-components/vite'
 import MiniProgramTailwind from '@dcasia/mini-program-tailwind-webpack-plugin/rollup'
+import uni from '@dcloudio/vite-plugin-uni'
+import path from 'path'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import WindiCSS from 'vite-plugin-windicss'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {},
@@ -57,6 +57,11 @@ export default defineConfig({
           '~/composables/router': [
             'useRouter',
             'useRoute',
+          ],
+        },
+        {
+          '~/logic/fetch': [
+            'useFetch',
           ],
         },
         {
