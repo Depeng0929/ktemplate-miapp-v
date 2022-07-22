@@ -21,6 +21,7 @@ specifiers:
   '@dcloudio/uni-ui': ^1.4.19
   '@dcloudio/vite-plugin-uni': ^3.0.0-alpha-3050220220719001
   '@depeng9527/eslint-config': ^1.4.3
+  '@depeng9527/k-data': ^1.2.0
   '@depeng9527/tools': ^2.2.8
   '@types/node': ^18.0.6
   '@types/qs': ^6.9.7
@@ -42,7 +43,7 @@ specifiers:
   uni-ajax: ^3.0.0
   unplugin-auto-import: ^0.9.3
   unplugin-vue-components: ^0.21.1
-  vite: ^2.9.14
+  vite: 2.9.14
   vite-plugin-windicss: ^1.8.7
   vitest: ^0.18.1
   vue: ^3.2.37
@@ -64,6 +65,7 @@ dependencies:
   '@dcloudio/uni-mp-weixin': 3.0.0-alpha-3050220220719001_postcss@8.4.14+vue@3.2.37
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3050220220719001_postcss@8.4.14+vue@3.2.37
   '@dcloudio/uni-ui': 1.4.19
+  '@depeng9527/k-data': 1.2.0
   '@depeng9527/tools': 2.2.8
   await-to-js: 3.0.0
   mp-html: 2.3.1
@@ -1002,6 +1004,14 @@ packages:
       - supports-color
       - typescript
     dev: true
+
+  /@depeng9527/k-data/1.2.0:
+    resolution: {integrity: sha512-8ZRC5hpkgeS7otZh9k2XXNtbu3LOSJ70akdmZ9Pkial0qJH6+0AbFHCssmSDYOg+0MCCuAmbMdl388zTHnitNQ==}
+    dependencies:
+      '@depeng9527/tools': 2.2.8
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@depeng9527/tools/2.2.8:
     resolution: {integrity: sha512-f/GyyMoeHyf0heJfu54k3Ou9Xf5X/jjdOIm5+2HSQgfKYHCy0RrWxqIU+6fvcnarkOeUS4ojkzowge9AWF7MVw==}

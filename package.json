@@ -48,6 +48,7 @@
     "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-3050220220719001",
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3050220220719001",
     "@dcloudio/uni-ui": "^1.4.19",
+    "@depeng9527/k-data": "^1.2.0",
     "@depeng9527/tools": "^2.2.8",
     "await-to-js": "^3.0.0",
     "mp-html": "^2.3.1",
