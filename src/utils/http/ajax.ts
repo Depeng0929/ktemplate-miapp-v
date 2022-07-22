@@ -1,14 +1,14 @@
 import type { AjaxResponse } from 'uni-ajax'
 import ajax from 'uni-ajax'
 
-const http = ajax.create({
+const index = ajax.create({
   baseURL: import.meta.env.VITE_APP_API,
   header: {
     'content-type': 'application/json',
   },
 })
 
-http.interceptors.request.use(
+index.interceptors.request.use(
   (config) => {
     config.header = Object.assign({}, config.header, { auth: 'auth' })
     return config
@@ -17,7 +17,7 @@ http.interceptors.request.use(
     return Promise.reject(error)
   },
 )
-http.interceptors.response.use(
+index.interceptors.response.use(
   (response: AjaxResponse<API.ResponseData>) => {
     const res = response.data
     if (
@@ -37,7 +37,7 @@ http.interceptors.response.use(
     return Promise.reject(res || 'error')
   },
 )
-export default http
+export default index
 
 // 错误处理
 function handlerError(response: API.ResponseData) {

@@ -1,4 +1,5 @@
 import { LRU } from '@depeng9527/k-data'
+import type { ShallowRef } from 'vue'
 
 export function asyncCacheFn<R, A extends unknown[], K = string>(
   fn: (...args: A) => Promise<R>,
@@ -11,7 +12,7 @@ export function asyncCacheFn<R, A extends unknown[], K = string>(
   const lru = new LRU<R, K | string>()
   const pendding = new Set<Promise<R>>()
 
-  const wrapper = (...args: A) => {
+  const wrapper = ((...args: A) => {
     const result = shallowRef<R | null>(null)
     const key = getKey(args)
     if (lru.has(key))
@@ -29,7 +30,7 @@ export function asyncCacheFn<R, A extends unknown[], K = string>(
     pendding.add(promise)
 
     return result
-  }
+  }) as AsyncCacheFn<R, A>
 
   wrapper.clear = () => lru.clear()
 
@@ -38,4 +39,9 @@ export function asyncCacheFn<R, A extends unknown[], K = string>(
 
 interface AsyncCacheFnOptions<A extends any[], R, K = string> {
   getKey?: (...args: A) => K
+}
+
+interface AsyncCacheFn<R, A extends any[]> {
+  (...args: A): ShallowRef<R | null>
+  clear(): void
 }

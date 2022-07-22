@@ -1,7 +1,9 @@
-
-import type { User } from './type'
 import http from '~/utils/http'
 
-export function fetchUser() {
-  return http.get<unknown, User>('/user')
+export async function fetchUser() {
+  const data = await http({
+    url: '/user',
+    method: 'GET',
+  })
+  return data
 }
