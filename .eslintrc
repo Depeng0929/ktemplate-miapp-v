@@ -1,6 +1,8 @@
 {
   "extends": "@depeng9527/eslint-config",
   "rules": {
-    "vue/no-setup-props-destructure": "off"
+    "vue/no-setup-props-destructure": "off",
+    "semi": "off",
+    "@typescript-eslint/semi": ["off"]
   }
 }

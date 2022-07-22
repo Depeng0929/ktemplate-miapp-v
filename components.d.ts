@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./src/components/AppButton.vue')['default']
+    AppImage: typeof import('./src/components/AppImage.vue')['default']
     AppPage: typeof import('./src/components/AppPage/index.vue')['default']
     AppPicker: typeof import('./src/components/AppPicker/index.vue')['default']
     Auth: typeof import('./src/components/AppPage/Auth.vue')['default']
@@ -17,5 +18,4 @@ declare module '@vue/runtime-core' {
     Reader: typeof import('./src/components/Reader.vue')['default']
     Skeleton: typeof import('./src/components/Skeleton.vue')['default']
   }
-
 }

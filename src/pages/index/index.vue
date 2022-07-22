@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useButton } from '~/composables/button'
-import { usePageShow } from '~/logic/permission'
+import { useButton } from '~/composables/button';
+import { usePageShow } from '~/logic/permission';
 
 usePageShow(() => {
   debug(1)
@@ -42,5 +42,7 @@ const current = ref('')
       {{ current }}
     </view>
     <uni-badge text="1" type="primary" />
+
+    <AppImage src="logo.png" width="200" height="auto" />
   </AppPage>
 </template>
