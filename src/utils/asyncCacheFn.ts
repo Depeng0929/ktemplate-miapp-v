@@ -54,8 +54,8 @@ interface AsyncCacheFnOptions<A extends any[], K = string> {
 }
 
 interface asyncFunction<A extends any[]> {
-  (...args: A): {
-    data: ShallowRef<any>
+  <T = unknown>(...args: A): {
+    data: ShallowRef<T>
     loadding: Ref<boolean>
     error: ShallowRef<any>
   }

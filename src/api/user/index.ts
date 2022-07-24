@@ -1,3 +1,4 @@
+import type { User } from './type'
 import useFetch from '~/utils/http/index'
 
 export async function fetchUser() {

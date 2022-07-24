@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { fetchUser } from '~/api/user';
 import { useButton } from '~/composables/button';
 import { usePageShow } from '~/logic/permission';
 
 usePageShow(() => {
   debug(1)
 })
-
-const data = ref(null)
-async function fetch() {
-  const { data: newData } = await fetchUser()
-  data.value = newData
-}
-fetch()
 
 function onClick() {
   return new Promise((resolve) => {
@@ -52,6 +44,5 @@ const current = ref('')
     <uni-badge text="1" type="primary" />
 
     <AppImage src="logo.png" width="200" height="auto" />
-    {{ data }}
   </AppPage>
 </template>
