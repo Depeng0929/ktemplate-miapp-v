@@ -1,14 +1,11 @@
-// import type { AjaxRequestConfig } from 'uni-ajax'
+import type { AjaxRequestConfig } from 'uni-ajax'
 import fetch from './ajax'
-// import { asyncCacheFn } from '~/utils/asyncCacheFn'
+import { asyncCacheFn } from '~/utils/asyncCacheFn'
 
-// const cacheFetch = (options: AjaxRequestConfig) => {
-//   return asyncCacheFn(async(options: AjaxRequestConfig) => {
-//     const data = await fetch(options)
-//     return data
-//   }, {
-//     getKey: (...args) => args[0].url!,
-//   })
-// }
+const useFetch = asyncCacheFn(async(config: AjaxRequestConfig) => {
+  return fetch(config)
+}, {
+  getKey: config => config[0].url,
+})
 
-export default fetch
+export default useFetch

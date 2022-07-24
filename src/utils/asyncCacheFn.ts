@@ -1,9 +1,9 @@
 import { LRU } from '@depeng9527/k-data'
-import type { ShallowRef } from 'vue'
+import type { Ref, ShallowRef } from 'vue'
 
 export function asyncCacheFn<R, A extends unknown[], K = string>(
   fn: (...args: A) => Promise<R>,
-  options: AsyncCacheFnOptions<A, R, K> = {},
+  options: AsyncCacheFnOptions<A, K> = {},
 ) {
   const {
     getKey = (args: A) => JSON.stringify(args),
@@ -13,35 +13,51 @@ export function asyncCacheFn<R, A extends unknown[], K = string>(
   const pendding = new Set<Promise<R>>()
 
   const wrapper = ((...args: A) => {
-    const result = shallowRef<R | null>(null)
+    const data = shallowRef<R | null>(null)
+    const loadding = ref(false)
+    const error = shallowRef(null)
+
     const key = getKey(args)
+
     if (lru.has(key))
-      result.value = lru.get(key)!
+      data.value = lru.get(key)!
 
     const promise = Promise.resolve(fn(...args))
 
-    promise.finally(() => {
-      pendding.delete(promise)
-    }).then((res) => {
-      result.value = res
+    loadding.value = true
+    promise.then((res) => {
+      data.value = res
       lru.add(key, res)
-      return result
+    }).catch((err) => {
+      error.value = err
+    }).finally(() => {
+      loadding.value = false
+      pendding.delete(promise)
     })
+
     pendding.add(promise)
 
-    return result
-  }) as AsyncCacheFn<R, A>
-
+    return {
+      data,
+      loadding,
+      error,
+    }
+  }) as asyncFunction<A>
+  // https://blog.csdn.net/weixin_43477825/article/details/119912771
   wrapper.clear = () => lru.clear()
 
   return wrapper
 }
 
-interface AsyncCacheFnOptions<A extends any[], R, K = string> {
-  getKey?: (...args: A) => K
+interface AsyncCacheFnOptions<A extends any[], K = string> {
+  getKey?: (args: A) => K
 }
 
-interface AsyncCacheFn<R, A extends any[]> {
-  (...args: A): ShallowRef<R | null>
-  clear(): void
+interface asyncFunction<A extends any[]> {
+  (...args: A): {
+    data: ShallowRef<any>
+    loadding: Ref<boolean>
+    error: ShallowRef<any>
+  }
+  clear: () => void
 }
