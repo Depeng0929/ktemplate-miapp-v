@@ -21,3 +21,65 @@
 * 内置组件库[uni-ui](https://uniapp.dcloud.net.cn/component/uniui/uni-ui.html)
 
 * 🔥持续更新中
+
+## 内置组件
+
+* AppPage: 每个页面的根节点，用于权限控制和属性配置
+
+* AppPicker: picker组件结合cell组件，用于选择某个值
+
+* QRcode: 生成二维码
+
+* AppButton: 按钮组件
+
+* AppImage: Image组件，内置loadding
+
+* Reader: html parse组件
+
+* List: 带有插槽的列表组件
+
+## 使用技巧
+
+* useFetch: LRU缓存，同swr
+
+```js
+const { data, error, loadding } = useFetch < User > ({
+  url: 'http://127.0.0.1:4523/m1/1339598-0-default/user',
+  method: 'GET',
+})
+```
+
+* usePageShow: 确保有用户信息后执行相关的请求
+
+``` js
+usePageShow(() => {
+  debug(1)
+})
+```
+
+* useButton: reactive hooks for loadding
+
+```js
+function onClick() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(1)
+    }, 2000)
+  })
+}
+const submit = reactive(useButton(onClick))
+```
+
+* useSearchParams: 获取参数
+
+* useLoading: 常用于提交
+
+```js
+useLoading(sleep(1000))
+```
+
+* whenever
+
+* toast、confirm、alert
+
+* useBus、useButton、useClipboard、useList、useRouter、useShare、useTitle、
