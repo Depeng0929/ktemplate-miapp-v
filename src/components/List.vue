@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-interface Props {
-  list: []
+interface Props<T = any> {
+  list: T[]
   show?: boolean
   loading?: boolean
   isFinish?: boolean
@@ -20,7 +20,7 @@ const {
 <template>
   <div>
     <template v-for="item in list" :key="item.id">
-      <slot v-bind="item" />
+      <slot :item="item" />
     </template>
     <slot v-if="loading" name="pending">
       <Loading />

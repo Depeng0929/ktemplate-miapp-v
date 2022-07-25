@@ -44,5 +44,13 @@ const current = ref('')
     <uni-badge text="1" type="primary" />
 
     <AppImage src="logo1.png" width="200" height="200" />
+
+    <List :list="list">
+      <template #default="{item}: {item: {name: string}}">
+        <view>
+          {{ item.name }}
+        </view>
+      </template>
+    </List>
   </AppPage>
 </template>
