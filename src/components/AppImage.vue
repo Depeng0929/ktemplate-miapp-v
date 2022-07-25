@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { isNumberLike } from '@depeng9527/tools';
+import { whenever } from '~/composables/tools';
 
 const {
   showLoading = false,
@@ -20,9 +21,18 @@ const {
    */
   extra?: boolean
 }>()
+let loading = $ref(false)
+let error = $shallowRef(false)
+
+whenever(() => src, () => {
+  loading = true
+})
 
 const imageURL = computed(() => {
   return extra ? src : `/static/${src}`
+})
+const showPlaceholder = computed(() => {
+  return loading || error
 })
 
 const imageStyle = computed(() => {
@@ -35,12 +45,31 @@ const imageStyle = computed(() => {
 function parseRect(aStr: number | string): string {
   return isNumberLike(aStr) ? `${uni.upx2px(+aStr)}px` : `'${aStr}'`
 }
+
+function onLoading() {
+  loading = false
+}
+
+function onError() {
+  loading = false
+  error = true
+}
 </script>
 
 <template>
+  <view
+    v-if="showPlaceholder"
+    :style="imageStyle"
+    class="bg-[#F3F4F6] flex-center justify-center"
+  >
+    <uni-load-more status="loading" :show-text="false" />
+  </view>
   <image
+    v-else
     :style="imageStyle"
     :src="imageURL"
     :loading="showLoading"
+    @load="onLoading"
+    @error="onError"
   />
 </template>

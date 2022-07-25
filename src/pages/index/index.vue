@@ -43,6 +43,6 @@ const current = ref('')
     </view>
     <uni-badge text="1" type="primary" />
 
-    <AppImage src="logo.png" width="200" height="auto" />
+    <AppImage src="logo1.png" width="200" height="200" />
   </AppPage>
 </template>

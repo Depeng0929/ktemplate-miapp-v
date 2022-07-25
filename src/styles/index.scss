@@ -1,3 +1,7 @@
 :root, page {
   --theme: #1989fa;
 }
+
+.flex-center {
+  @apply flex items-center;
+}
