@@ -4,7 +4,7 @@ import Preload from './Preload.vue'
 </script>
 
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen app-page">
     <Preload>
       <Auth>
         <slot />

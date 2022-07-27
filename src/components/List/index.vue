@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 interface Props {
-  list: unknown[]
+  list: any[]
   show?: boolean
   loading?: boolean
   isFinish?: boolean
