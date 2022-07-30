@@ -40,7 +40,7 @@
 
 ## 使用技巧
 
-* useFetch: LRU缓存，同swr
+* useFetch: LRU缓存，同swr, 权限校验
 
 ```js
 const { data, error, loadding } = useFetch < User > ({
@@ -60,13 +60,6 @@ export function fetchUser() {
 }
 ```
 
-* usePageShow: 确保有用户信息后执行相关的请求
-
-``` js
-usePageShow(() => {
-  debug(1)
-})
-```
 
 * useButton: reactive hooks for loadding
 

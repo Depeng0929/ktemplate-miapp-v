@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { useButton } from '~/composables/button';
-import { usePageShow } from '~/logic/permission';
-
-usePageShow(() => {
-  // debug(1)
-})
 
 function onClick() {
   return new Promise((resolve) => {
