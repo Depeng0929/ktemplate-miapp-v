@@ -59,11 +59,6 @@ export default defineConfig({
           ],
         },
         {
-          '~/utils/http/useFetch': [
-            ['default', 'useFetch'],
-          ],
-        },
-        {
           '~/utils/tools': [
             'toast',
             'alert',
