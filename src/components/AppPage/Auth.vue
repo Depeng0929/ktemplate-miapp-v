@@ -2,14 +2,14 @@
 import { pageAllowAccess } from '~/logic/permission'
 const route = useRoute()
 
-const AllowAccess = $computed(() => {
+const allowAccess = $computed(() => {
   return pageAllowAccess(route.path!)
 })
 
 </script>
 
 <template>
-  <template v-if="AllowAccess">
+  <template v-if="allowAccess">
     <slot />
   </template>
 </template>
