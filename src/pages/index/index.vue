@@ -3,7 +3,7 @@ import { useButton } from '~/composables/button';
 import { usePageShow } from '~/logic/permission';
 
 usePageShow(() => {
-  debug(1)
+  // debug(1)
 })
 
 function onClick() {

@@ -59,8 +59,8 @@ export default defineConfig({
           ],
         },
         {
-          '~/logic/fetch': [
-            'useFetch',
+          '~/utils/http': [
+            ['default', 'useFetch'],
           ],
         },
         {

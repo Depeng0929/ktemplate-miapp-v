@@ -49,6 +49,17 @@ const { data, error, loadding } = useFetch < User > ({
 })
 ```
 
+api中使用
+
+```js
+export function fetchUser() {
+  return useFetch < User > ({
+    url: 'http://127.0.0.1:4523/m1/1339598-0-default/user',
+    method: 'GET',
+  })
+}
+```
+
 * usePageShow: 确保有用户信息后执行相关的请求
 
 ``` js
