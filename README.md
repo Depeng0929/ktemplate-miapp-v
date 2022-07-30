@@ -40,27 +40,6 @@
 
 ## 使用技巧
 
-* useFetch: LRU缓存，同swr, 权限校验
-
-```js
-const { data, error, loadding } = useFetch < User > ({
-  url: 'http://127.0.0.1:4523/m1/1339598-0-default/user',
-  method: 'GET',
-})
-```
-
-api中使用
-
-```js
-export function fetchUser() {
-  return useFetch < User > ({
-    url: 'http://127.0.0.1:4523/m1/1339598-0-default/user',
-    method: 'GET',
-  })
-}
-```
-
-
 * useButton: reactive hooks for loadding
 
 ```js
