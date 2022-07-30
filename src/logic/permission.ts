@@ -16,8 +16,10 @@ export function pageAllowAccess(url: string) {
   return pageInWhiteList(url) || hasLogin
 }
 
-// 如果当前页面需要预请求，使用此方法
-// 该方法与AppPage强联系
+/**
+ * Preload
+ * 如果当前页面需要预请求，使用此方法
+ */
 export const loading = ref(false)
 export const error = shallowRef(null)
 export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T>|T) {
