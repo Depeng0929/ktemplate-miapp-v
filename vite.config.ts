@@ -10,7 +10,8 @@ export default defineConfig({
   test: {},
   build: process.env.NODE_ENV === 'production'
     ? {
-      sourcemap: process.env.NODE_ENV !== 'production',
+      target: 'es2015',
+      sourcemap: false,
       minify: 'terser',
       terserOptions: {
         compress: {
@@ -44,6 +45,9 @@ export default defineConfig({
     uni({
       vueOptions: {
         reactivityTransform: true,
+      },
+      viteLegacyOptions: {
+        targets: ['defaults', 'android >= 6', 'ios >= 10'],
       },
     }),
     WindiCSS(),
