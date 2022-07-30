@@ -1,6 +1,5 @@
 <script setup lang='ts'>
-const loading = $ref(false)
-const error = $ref(null)
+import { error, loading } from '~/logic/permission'
 
 </script>
 

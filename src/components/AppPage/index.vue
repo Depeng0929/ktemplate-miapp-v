@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen app-page">
-    <Preload>
-      <Auth>
+    <Auth>
+      <Preload>
         <slot />
-      </Auth>
-    </Preload>
+      </Preload>
+    </Auth>
   </div>
 </template>
