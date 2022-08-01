@@ -1,18 +1,20 @@
-import { ensurePrefix, sleep } from '@depeng9527/tools'
+import { ensurePrefix } from '@depeng9527/tools'
+import { storage_token } from '~/logic'
+import { useUserStore } from '~/store/user'
+import type { RoutePath } from '~/types'
 
-export function pageInWhiteList(url: string) {
+export function pageInWhiteList(url: RoutePath) {
   const path = ensurePrefix('/', url)
   // TODO: add page white list
   const whiteList: string[] = [
     '/pages/index/index',
+    '/pages/login/index',
   ]
   return whiteList.includes(path)
 }
 
-export function pageAllowAccess(url: string) {
-  // TODO: maybe token exist
-  const hasLogin = true
-
+export function pageAllowAccess(url: RoutePath) {
+  const hasLogin = storage_token.value
   return pageInWhiteList(url) || hasLogin
 }
 
@@ -24,22 +26,18 @@ export const loading = ref(false)
 export const error = shallowRef(null)
 export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T>|T | void) {
   const data = ref<T | null>(null)
-  const route = useRoute()
+  const userStore = useUserStore()
 
   init()
 
   async function init() {
-    // TODO: userInfo
-    if (pageInWhiteList(route.path!)) {
+    if (userStore.hasUserInfo) {
       data.value = await fn() as any
       return
     }
 
     loading.value = true
-    await sleep(1000)
-      .catch((err) => {
-        error.value = err
-      })
+    await userStore.fetchUserInfo()
     loading.value = false
 
     data.value = await fn() as any

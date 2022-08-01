@@ -1,6 +1,7 @@
 /**
  * like vue-router
  */
+import type { RoutePath } from '~/types'
 import { pageAllowAccess } from '~/logic/permission'
 import type { IOnloadOptions } from '~/types'
 import { parseOnLoadOptions, urlParamStr } from '~/utils'
@@ -12,7 +13,7 @@ class AppRouter {
     })
   }
 
-  push(url: string, params: Record<string, string>) {
+  push(url: RoutePath, params?: Record<string, string>) {
     return this.checkPermission(url)
       .then(() => {
         return uni.navigateTo({
@@ -21,7 +22,7 @@ class AppRouter {
       })
   }
 
-  replace(url: string, params: Record<string, string>) {
+  replace(url: RoutePath, params?: Record<string, string>) {
     return this.checkPermission(url)
       .then(() => {
         return uni.redirectTo({
@@ -30,7 +31,7 @@ class AppRouter {
       })
   }
 
-  switch(url: string) {
+  switch(url: RoutePath) {
     return this.checkPermission(url)
       .then(() => {
         return uni.switchTab({
@@ -39,7 +40,7 @@ class AppRouter {
       })
   }
 
-  private checkPermission(url: string) {
+  private checkPermission(url: RoutePath) {
     return new Promise((resolve, reject) => {
       if (pageAllowAccess(url))
         resolve(true)
@@ -48,7 +49,8 @@ class AppRouter {
     })
   }
 
-  private setupParams(url: string, params: Record<string, string>) {
+  private setupParams(url: RoutePath, params?: Record<string, string>) {
+    if (!params) return url
     return url += `?${urlParamStr(params)}`
   }
 }
@@ -63,7 +65,7 @@ export function useRoute<T extends Object>() {
   const options = (page as any).options as IOnloadOptions<T>
 
   return {
-    path: page.route,
+    path: `/${page.route}` as RoutePath,
     query: parseOnLoadOptions<T>(options || {}),
   }
 }

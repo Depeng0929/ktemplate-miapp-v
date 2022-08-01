@@ -8,6 +8,7 @@ const {
   width = 300,
   height = 225,
   extra = false,
+  className = '',
 } = defineProps<{
   showLoading?: boolean
   /**
@@ -20,6 +21,7 @@ const {
    * 是否http资源
    */
   extra?: boolean
+  className?: string
 }>()
 let loading = $ref(false)
 let error = $shallowRef(false)
@@ -61,6 +63,7 @@ function onError() {
     v-if="showPlaceholder"
     :style="imageStyle"
     class="bg-[#F3F4F6] flex-center justify-center"
+    :class="className"
   >
     <uni-load-more status="loading" :show-text="false" />
   </view>

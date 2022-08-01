@@ -26,17 +26,73 @@
 
 * AppPage: 每个页面的根节点，用于权限控制和属性配置
 
+```vue
+usePageShow(() => {
+  debug(['1'])
+})
+
+<AppPage>
+  内容
+</AppPage>
+```
+
 * AppPicker: picker组件结合cell组件，用于选择某个值
+
+```vue
+   <AppPicker
+      v-model="current"
+      mode="date"
+      :list="list"
+    >
+      <template #default="slotProps">
+        <AppButton :status="submit.status" @click="submit.onClick">
+          {{ slotProps.value }}
+        </AppButton>
+      </template>
+    </AppPicker>
+```
 
 * QRcode: 生成二维码
 
 * AppButton: 按钮组件
 
+```vue
+
+<AppButton :status="submit.status" @click="submit.onClick">
+  {{ slotProps.value }}
+</AppButton>
+
+import { useButton } from '~/composables/button';
+
+function onClick() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(1)
+    }, 2000)
+  })
+}
+const submit = reactive(useButton(onClick))
+```
+
 * AppImage: Image组件，内置loadding
+
+```vue
+<AppImage src="logo1.png" width="200" height="200" />
+```
 
 * Reader: html parse组件
 
 * List: 带有插槽的列表组件
+
+```vue
+<List :list="list">
+  <template #default="{item}: {item: {name: string}}">
+    <view>
+      {{ item.name }}
+    </view>
+  </template>
+</List>
+```
 
 ## 使用技巧
 
