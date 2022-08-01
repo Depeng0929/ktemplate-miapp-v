@@ -22,7 +22,7 @@ specifiers:
   '@dcloudio/vite-plugin-uni': ^3.0.0-alpha-3050320220729001
   '@depeng9527/eslint-config': ^1.4.3
   '@depeng9527/k-data': ^1.2.0
-  '@depeng9527/tools': ^2.4.0
+  '@depeng9527/tools': ^2.4.1
   '@types/node': ^18.6.3
   '@types/qs': ^6.9.7
   '@typescript-eslint/eslint-plugin': ^5.31.0
@@ -66,7 +66,7 @@ dependencies:
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3050320220729001_postcss@8.4.14+vue@3.2.37
   '@dcloudio/uni-ui': 1.4.20
   '@depeng9527/k-data': 1.2.0
-  '@depeng9527/tools': 2.4.0
+  '@depeng9527/tools': 2.4.1
   await-to-js: 3.0.0
   mp-html: 2.3.1
   pinia: 2.0.17_typescript@4.7.4+vue@3.2.37
@@ -1040,13 +1040,13 @@ packages:
   /@depeng9527/k-data/1.2.0:
     resolution: {integrity: sha512-8ZRC5hpkgeS7otZh9k2XXNtbu3LOSJ70akdmZ9Pkial0qJH6+0AbFHCssmSDYOg+0MCCuAmbMdl388zTHnitNQ==}
     dependencies:
-      '@depeng9527/tools': 2.4.0
+      '@depeng9527/tools': 2.4.1
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@depeng9527/tools/2.4.0:
-    resolution: {integrity: sha512-HdRe7EKPhF5vyfMKESlQFGs4LU/AQ/H3fqssL8BDItKgkomdVDtljd4SHYBPvH4dCTXtGmHwtzWXxn3BuDRuQQ==}
+  /@depeng9527/tools/2.4.1:
+    resolution: {integrity: sha512-/wU9gD5MPqgKL0CblMLnJPX/e17lZxvtaEOBL+U2oVSmHFyi9sAvW82TLAY2zKVP/8qaZ6vX2M+LUXbPWc6AlA==}
     dependencies:
       big.js: 6.2.1
       dayjs: 1.11.4
