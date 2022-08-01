@@ -1,6 +1,10 @@
 # template-minapp
 个人常用的uniapp模版,支持微信和小程序.
 
+## Support
+* 微信基础库 >= `2.11.0`
+* ios >= `11.0`, Android >= `6.0`
+
 ## 特性
 * Vite, Vue3, pnpm
 
