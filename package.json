@@ -49,7 +49,7 @@
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3050320220729001",
     "@dcloudio/uni-ui": "^1.4.20",
     "@depeng9527/k-data": "^1.2.0",
-    "@depeng9527/tools": "^2.3.0",
+    "@depeng9527/tools": "^2.4.0",
     "await-to-js": "^3.0.0",
     "mp-html": "^2.3.1",
     "pinia": "^2.0.17",
