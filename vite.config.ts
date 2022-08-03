@@ -91,12 +91,4 @@ export default defineConfig({
       vueTemplate: true,
     }),
   ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@import "~/styles/vars.scss";',
-      },
-    },
-  },
-
 })
