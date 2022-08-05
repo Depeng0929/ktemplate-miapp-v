@@ -7,6 +7,7 @@ interface AppPickerProps extends PickerProps {
   modelValue?: string | number
   list?: Array<{ key: string | number; name: unknown }>
   end?: string | number
+  className?: string | Array<string>
 }
 
 const props = defineProps<AppPickerProps>()
@@ -25,16 +26,18 @@ function createPicker(mode: PickerMode) {
 </script>
 
 <template>
-  <picker
-    v-if="picker"
-    :value="picker.index"
-    :mode="picker.mode"
-    :range="list"
-    range-key="name"
-    start="1950-01-01"
-    :end="end"
-    @change="picker.onChange"
-  >
-    <slot :value="picker.text" />
-  </picker>
+  <view class="w-full" :class="props.className">
+    <picker
+      v-if="picker"
+      :value="picker.index"
+      :mode="picker.mode"
+      :range="list"
+      range-key="name"
+      start="1950-01-01"
+      :end="end"
+      @change="picker.onChange"
+    >
+      <slot :value="picker.text" />
+    </picker>
+  </view>
 </template>
