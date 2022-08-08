@@ -51,6 +51,7 @@
     "@depeng9527/k-data": "^1.2.0",
     "@depeng9527/tools": "^2.4.1",
     "await-to-js": "^3.0.0",
+    "hex-and-rgba": "^2.0.0",
     "mp-html": "^2.3.1",
     "pinia": "^2.0.17",
     "qs": "^6.11.0",

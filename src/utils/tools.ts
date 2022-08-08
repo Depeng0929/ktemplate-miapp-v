@@ -1,3 +1,5 @@
+import { hexToRgba, isValidHex } from 'hex-and-rgba/esm/index.mjs';
+
 export const alert = function(msg: string, callback: any = null) {
   uni.showModal({
     title: '提示',
@@ -48,4 +50,12 @@ export const showLoading = (msg = '') => {
 
 export const hideLoading = () => {
   uni.hideLoading()
+}
+
+export function hexToRgb(hex: string, opacity = 1) {
+  if (!isValidHex(hex))
+    return false
+
+  const arr = hexToRgba(hex) as [number, number, number, number];
+  return `rgba(${arr[0]},${arr[1]},${arr[2]},${opacity})`
 }
