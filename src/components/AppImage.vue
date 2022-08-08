@@ -9,6 +9,7 @@ const {
   height = 225,
   extra = false,
   className = '',
+  isPreview = false,
 } = defineProps<{
   showLoading?: boolean
   /**
@@ -22,6 +23,7 @@ const {
    */
   extra?: boolean
   className?: string
+  isPreview?: false
 }>()
 let loading = $ref(false)
 let error = $shallowRef(false)
@@ -56,6 +58,15 @@ function onError() {
   loading = false
   error = true
 }
+
+function onPreview() {
+  if (!isPreview)
+    return false
+
+  uni.previewImage({
+    urls: [src],
+  })
+}
 </script>
 
 <template>
@@ -74,5 +85,6 @@ function onError() {
     :loading="showLoading"
     @load="onLoading"
     @error="onError"
+    @click="onPreview"
   />
 </template>
