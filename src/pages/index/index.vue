@@ -9,6 +9,12 @@ function onMine() {
   router.push('/pages/mine/index')
 }
 
+const list = [
+  '1',
+  '2',
+  '3',
+]
+
 </script>
 
 <template>
@@ -21,5 +27,6 @@ function onMine() {
     <AppButton class-name="mt-4" @click="onMine">
       我的
     </AppButton>
+    <AppSwiper :list="list" />
   </AppPage>
 </template>

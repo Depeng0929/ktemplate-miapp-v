@@ -2,12 +2,14 @@
 import { debounce } from '@depeng9527/tools'
 import { toArray } from 'windicss/utils';
 import type { ButtonStatus } from '~/composables/button'
+import vars from '~/styles/vars.module.scss'
 
 interface ButtonProps {
   status?: ButtonStatus
   throttleTime?: number
   block?: boolean
   className?: string | string[]
+  color?: string
 }
 
 const {
@@ -18,6 +20,7 @@ const {
   throttleTime = 0,
   block = true,
   className = '',
+  color = vars.theme,
 } = defineProps<ButtonProps>()
 const emit = defineEmits({
   click: null,
@@ -52,7 +55,7 @@ function onClick(e: Event) {
 
 <style lang="scss">
 .app-button {
-  background-color: var(--theme);
+  background-color: v-bind(color);
   border: 0 none;
   font-size: 14px;
   @apply rounded text-white cursor-pointer px-4 py-1 ;
@@ -61,8 +64,8 @@ function onClick(e: Event) {
   }
   &[disabled], &:disabled {
     @apply cursor-default opacity-70;
-    border-color: var(--theme)!important;
-    background-color: var(--theme)!important;
+    border-color: v-bind(color)!important;
+    background-color: v-bind(color)!important;
     color: #fff!important;
   }
 }

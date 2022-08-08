@@ -14,5 +14,6 @@ declare namespace NodeJS {
 declare interface MinappEvent {
   detail: {
     value: any
+    current: any
   }
 }

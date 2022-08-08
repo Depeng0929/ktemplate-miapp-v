@@ -5,7 +5,7 @@ import { whenever } from '~/composables/tools';
 const {
   showLoading = false,
   src = '',
-  width = 300,
+  width = '100%',
   height = 225,
   extra = false,
   className = '',
@@ -47,7 +47,7 @@ const imageStyle = computed(() => {
 })
 
 function parseRect(aStr: number | string): string {
-  return isNumberLike(aStr) ? `${uni.upx2px(+aStr)}px` : `'${aStr}'`
+  return isNumberLike(aStr) ? `${uni.upx2px(+aStr)}px` : `${aStr}`
 }
 
 function onLoading() {

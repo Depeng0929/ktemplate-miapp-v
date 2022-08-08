@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     AppImage: typeof import('./src/components/AppImage.vue')['default']
     AppPage: typeof import('./src/components/AppPage/index.vue')['default']
     AppPicker: typeof import('./src/components/AppPicker/index.vue')['default']
+    AppSwiper: typeof import('./src/components/AppSwiper/index.vue')['default']
     Auth: typeof import('./src/components/AppPage/Auth.vue')['default']
     List: typeof import('./src/components/List/index.vue')['default']
     Preload: typeof import('./src/components/AppPage/Preload.vue')['default']
