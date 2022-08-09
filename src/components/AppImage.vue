@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { isNumberLike } from '@depeng9527/tools';
 import { whenever } from '~/composables/tools';
+import { parseRect } from '~/utils';
 
 const {
   showLoading = false,
@@ -23,7 +23,7 @@ const {
    */
   extra?: boolean
   className?: string
-  isPreview?: false
+  isPreview?: boolean
 }>()
 let loading = $ref(false)
 let error = $shallowRef(false)
@@ -45,10 +45,6 @@ const imageStyle = computed(() => {
     height: `${parseRect(height)}`,
   }
 })
-
-function parseRect(aStr: number | string): string {
-  return isNumberLike(aStr) ? `${uni.upx2px(+aStr)}px` : `${aStr}`
-}
 
 function onLoading() {
   loading = false

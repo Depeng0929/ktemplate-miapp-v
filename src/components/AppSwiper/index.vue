@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import vars from '~/styles/vars.module.scss'
-import { hexToRgb } from '~/utils';
+import { hexToRgb, parseRect } from '~/utils';
 
 const {
   list = [],
+  height = '100%',
 } = defineProps<{
   list: Array<string>
+  height: number | string
 }>()
 let current = $ref(0)
 
@@ -17,7 +19,7 @@ const dotsStyles = {
   selectedBorder: vars.theme,
 }
 const swiperStyle = {
-  height: `${uni.upx2px(460)}px`,
+  height: parseRect(height),
 }
 
 function clickItem(index: number) {
@@ -41,7 +43,7 @@ function change(e: MinappEvent) {
   >
     <swiper :current="current" :style="swiperStyle" @change="change">
       <swiper-item v-for="(item, index) in list" :key="index">
-        <AppImage :src="item" height="100%" />
+        <AppImage :src="item" height="100%" :is-preview="true" />
       </swiper-item>
     </swiper>
   </uni-swiper-dot>

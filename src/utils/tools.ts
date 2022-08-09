@@ -1,4 +1,5 @@
 import { hexToRgba, isValidHex } from 'hex-and-rgba/esm/index.mjs';
+import { isNumberLike } from '@depeng9527/tools';
 
 export const alert = function(msg: string, callback: any = null) {
   uni.showModal({
@@ -58,4 +59,8 @@ export function hexToRgb(hex: string, opacity = 1) {
 
   const arr = hexToRgba(hex) as [number, number, number, number];
   return `rgba(${arr[0]},${arr[1]},${arr[2]},${opacity})`
+}
+
+export function parseRect(aStr: number | string): string {
+  return isNumberLike(aStr) ? `${uni.upx2px(+aStr)}px` : `${aStr}`
 }
