@@ -126,3 +126,5 @@ useLoading(sleep(1000))
 * toast、confirm、alert
 
 * useBus、useButton、useClipboard、useList、useRouter、useShare、useTitle、
+
+* 定义theme需要两个地方： 1. 修改`styles/vars.modules.scss` 2. 修改uni.scss以此修改uni-ui扩展组件
