@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { whenever } from '~/composables/tools';
-import { parseRect } from '~/utils';
+import { isExternal, parseRect } from '~/utils';
 
 const {
   showLoading = false,
   src = '',
   width = '100%',
   height = 225,
-  extra = false,
   className = '',
   isPreview = false,
 } = defineProps<{
@@ -21,7 +20,6 @@ const {
   /**
    * 是否http资源
    */
-  extra?: boolean
   className?: string
   isPreview?: boolean
 }>()
@@ -33,10 +31,14 @@ whenever(() => src, () => {
 })
 
 const imageURL = computed(() => {
-  return extra ? src : `/static/${src}`
+  return src
+    ? isExternal(src)
+      ? src
+      : `/static/${src}`
+    : ''
 })
 const showPlaceholder = computed(() => {
-  return loading || error
+  return !imageURL || loading || error
 })
 
 const imageStyle = computed(() => {
@@ -63,6 +65,7 @@ function onPreview() {
     urls: [src],
   })
 }
+
 </script>
 
 <template>
