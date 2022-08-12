@@ -1,5 +1,5 @@
 import { ensurePrefix } from '@depeng9527/tools'
-import { storage_token } from '~/logic'
+import { storage_token } from '~/logic/token'
 import { useUserStore } from '~/store/user'
 import type { RoutePath } from '~/types'
 

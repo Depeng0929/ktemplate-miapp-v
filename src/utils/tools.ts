@@ -30,8 +30,8 @@ export const confirm = function(msg: string, calConfirm: any = null, calCancel: 
 
 export const toast = (
   msg: string,
-  icon: 'success' | 'loading' | 'error' | 'none',
-  position: 'top' | 'center' | 'bottom',
+  icon?: 'success' | 'loading' | 'error' | 'none',
+  position?: 'top' | 'center' | 'bottom',
 ) => {
   uni.showToast({
     title: msg,

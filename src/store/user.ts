@@ -1,6 +1,6 @@
 import { sleep } from '@depeng9527/tools'
 import { defineStore } from 'pinia'
-import { storage_token } from '~/logic'
+import { storage_token } from '~/logic/token'
 
 // TODO: fetch in fetcher
 export const useUserStore = defineStore('user', () => {

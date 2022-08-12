@@ -17,3 +17,8 @@ declare interface MinappEvent {
     current: any
   }
 }
+
+declare module 'hex-and-rgba/esm/index.mjs' {
+  export function hexToRgba(hex: string, opacity = 1): [number, number, number, number]
+  export function isValidHex(hex: string): boolean
+}
