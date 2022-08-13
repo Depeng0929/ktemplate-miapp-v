@@ -3,7 +3,6 @@ import { defineConfig } from 'windicss/helpers'
 export default defineConfig({
   prefixer: false,
   preflight: false,
-  attributify: true,
   extract: {
     exclude: ['node_modules', '.git', 'dist'],
   },
