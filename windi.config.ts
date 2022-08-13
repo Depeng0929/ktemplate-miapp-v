@@ -21,7 +21,6 @@ export default defineConfig({
           light: '#363636',
           pure: '#000000',
         },
-
       },
     },
   },

@@ -4,7 +4,7 @@
  以下变量是默认值，如不需要修改可以不用给下面的变量重新赋值
  */
 // 可以修改此处来改变uni-ui扩展组件样式
-$uni-primary:pink;
+$uni-primary:[theme-name];
 $uni-primary-disable:mix(#fff,$uni-primary,50%);
 $uni-primary-light: mix(#fff,$uni-primary,80%);
 

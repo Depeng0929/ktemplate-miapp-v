@@ -26,6 +26,12 @@
 
 * 🔥持续更新中
 
+## Setup
+
+1. replace `[project-name]` with your project name
+
+2. replace `[theme-name]` with your theme color name
+
 ## 内置组件
 
 * AppPage: 每个页面的根节点，用于权限控制和属性配置
@@ -127,4 +133,3 @@ useLoading(sleep(1000))
 
 * useBus、useButton、useClipboard、useList、useRouter、useShare、useTitle、
 
-* 定义theme需要两个地方： 1. 修改`styles/vars.modules.scss` 2. 修改uni.scss以此修改uni-ui扩展组件

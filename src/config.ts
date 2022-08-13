@@ -1,2 +1,2 @@
 // TODO: rename
-export const PROJECT_NAME = 'template'
+export const PROJECT_NAME = '[project-name]';
