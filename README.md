@@ -30,7 +30,7 @@
 
 1. replace `[project-name]` with your project name
 
-2. replace `[theme-name]` with your theme color name
+2. replace `#1B2B34` with your theme color name
 
 ## 内置组件
 
