@@ -1,2 +1,3 @@
-import { PROJECT_NAME } from '~/config';
-export const STORAGE_KEY = `__${PROJECT_NAME}_token__`
+import config from '~/config.json';
+
+export const STORAGE_KEY = `__${config.project_name}_token__`

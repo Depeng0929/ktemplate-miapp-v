@@ -9,6 +9,9 @@ import visualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   test: {},
+  optimizeDeps: {
+    exclude: ['@depeng9527/tools'],
+  },
   build: process.env.NODE_ENV === 'production'
     ? {
       target: 'es2015',
@@ -35,6 +38,7 @@ export default defineConfig({
       '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
+
   server: {
     watch: {
       usePolling: true,

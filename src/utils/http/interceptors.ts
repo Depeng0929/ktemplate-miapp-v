@@ -1,11 +1,15 @@
+import { isNil } from '@depeng9527/tools';
 import type { AjaxRequestConfig, AjaxResponse } from 'uni-ajax';
+import { storage_token } from '~/logic/token'
 
 export function requestInterceptors(config: AjaxRequestConfig) {
+  const token = storage_token.value
+
   config.header = Object.assign(
     {},
     config.header,
     // setToken
-    { auth: 'auth' },
+    isNil(token) ? null : { token },
   )
   return config
 }
