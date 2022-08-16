@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import WindiCSS from 'vite-plugin-windicss'
 import { defineConfig } from 'vitest/config'
+import visualizer from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   test: {},
@@ -17,6 +18,15 @@ export default defineConfig({
         compress: {
           drop_console: true,
         },
+      },
+      rollupOptions: {
+        plugins: [
+          process.env.NODE_ENV === 'production' && visualizer({
+            open: true,
+            gzipSize: true,
+            brotliSize: true,
+          }),
+        ],
       },
     }
     : undefined,
