@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { error, loading } from '~/logic/permission'
+import { error, loading } from '~/logic/guard/page-loading'
 
 </script>
 

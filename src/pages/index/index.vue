@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { fetchUser } from '~/api/user/index'
-
 const router = useRouter()
 
 function onLogin() {
@@ -10,7 +8,6 @@ function onLogin() {
 function onMine() {
   router.push('/pages/mine/index')
 }
-fetchUser()
 
 </script>
 
