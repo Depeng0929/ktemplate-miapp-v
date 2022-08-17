@@ -22,3 +22,14 @@ declare module 'hex-and-rgba/esm/index.mjs' {
   export function hexToRgba(hex: string, opacity = 1): [number, number, number, number]
   export function isValidHex(hex: string): boolean
 }
+
+declare module 'u-qrcode' {
+  export default class QRCode {
+    constructor(options: {
+      text: string
+      size: number
+    }, ctx: any)
+
+    toDataURL(): string
+  }
+}

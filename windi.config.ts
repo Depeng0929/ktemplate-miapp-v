@@ -7,10 +7,7 @@ export default defineConfig({
     exclude: ['node_modules', '.git', 'dist'],
   },
   shortcuts: {
-    'border-base': 'border-gray-200',
-    'bg-base': 'bg-white',
-    'color-base': 'text-gray-900',
-    'color-fade': 'text-gray-900:50',
+    'bg-main': 'bg-white text-[#181818] dark:(bg-[#121212] text-[#ddd])',
   },
   theme: {
     extend: {

@@ -2,7 +2,7 @@
  * like vue-router
  */
 import type { RoutePath } from '~/types'
-import { pageAllowAccess } from '~/logic/permission'
+import { pageAllowAccess } from '~/logic/guard/permission-guard'
 import type { IOnloadOptions } from '~/types'
 import { parseOnLoadOptions, urlParamStr } from '~/utils'
 
