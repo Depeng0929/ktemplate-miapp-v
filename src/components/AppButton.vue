@@ -1,6 +1,5 @@
 <script setup lang='ts'>
-import { debounce } from '@depeng9527/tools'
-import { toArray } from 'windicss/utils';
+import { debounce, toArray } from '@depeng9527/tools'
 import type { ButtonStatus } from '~/composables/button'
 import vars from '~/styles/vars.module.scss'
 
