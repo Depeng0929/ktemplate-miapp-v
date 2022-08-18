@@ -1,6 +1,6 @@
 import type { Ref } from 'vue'
 import { isObject } from '@depeng9527/tools'
-import type { IListItem } from './type'
+import type { IListItem, ListExtraProps } from './type'
 import type { ListOptions, ListStatus } from '~/types'
 
 export function useList<T = any>(options: ListOptions<T>) {
@@ -12,16 +12,13 @@ export function useList<T = any>(options: ListOptions<T>) {
   let _id = 0
 
   const list = ref<[]>([]) as Ref<IListItem<T>[]>
-
   const page = reactive<API.Page & { value: number }>({
     value: 1,
     total: 0,
   })
-
   const totalPage = computed(() => {
     return Math.ceil(page.total / size)
   })
-
   const status = reactive({
     show: false, // 第一次请求不显示loading和empty，以此提升用户体验
     loading: false,
@@ -49,7 +46,7 @@ export function useList<T = any>(options: ListOptions<T>) {
       const processedRows = rows.map(item => createItem(item))
 
       page.total = total
-      list.value = [...list.value, ...(processedRows as IListItem<T>[])]
+      list.value = [...list.value, ...processedRows]
       status.show = true
     }
     catch (error) {
@@ -84,22 +81,44 @@ export function useList<T = any>(options: ListOptions<T>) {
     return fetchData()
   }
 
-  function createItem(item: T) {
+  function createItem(item: T): IListItem<T> {
     const processedItem = isObject(item) ? item as T : { value: item as T }
-    return {
-      ...(processedItem as IListItem<T>),
+    const extraItem: ListExtraProps = reactive({
       _id: _id++,
-    }
+      animationData: {},
+    })
+    return {
+      ...processedItem,
+      ...extraItem,
+    } as IListItem<T>
   }
 
   function addItem(item: T) {
-    list.value.push(createItem(item))
+    const processedItem = createItem(item)
+    list.value.push(processedItem)
   }
 
   function removeItem(item: IListItem<T>) {
-    const index = list.value.indexOf(item)
-    if (index !== -1)
-      list.value.splice(index, 1)
+    removeAnimation(item, () => {
+      const index = list.value.indexOf(item)
+      if (index !== -1)
+        list.value.splice(index, 1)
+    })
+  }
+  function removeAnimation(item: IListItem<T>, callback?: () => void) {
+    const duration = 200
+    const animation = uni.createAnimation({
+      timingFunction: 'ease-in',
+      duration,
+    })
+
+    animation.opacity(0).scale(0.98, 0.98).step()
+
+    item.animationData = animation.export()
+
+    setTimeout(() => {
+      callback && callback()
+    }, duration)
   }
 
   return {
