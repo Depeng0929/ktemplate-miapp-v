@@ -1,14 +1,17 @@
 import type { Ref } from 'vue'
+import { isObject } from '@depeng9527/tools'
+import type { IListItem } from './type'
 import type { ListOptions, ListStatus } from '~/types'
 
-export function useList<T>(options: ListOptions<T>) {
+export function useList<T = any>(options: ListOptions<T>) {
   const {
     fetch,
     size = 10,
     immediately = true,
   } = options
+  let _id = 0
 
-  const list = ref<T[]>([]) as Ref<T[]>
+  const list = ref<[]>([]) as Ref<IListItem<T>[]>
 
   const page = reactive<API.Page & { value: number }>({
     value: 1,
@@ -43,9 +46,10 @@ export function useList<T>(options: ListOptions<T>) {
         status.loading = false
         flag.value = false
       })
+      const processedRows = rows.map(item => createItem(item))
 
       page.total = total
-      list.value = [...list.value, ...rows]
+      list.value = [...list.value, ...(processedRows as IListItem<T>[])]
       status.show = true
     }
     catch (error) {
@@ -80,8 +84,28 @@ export function useList<T>(options: ListOptions<T>) {
     return fetchData()
   }
 
+  function createItem(item: T) {
+    const processedItem = isObject(item) ? item as T : { value: item as T }
+    return {
+      ...(processedItem as IListItem<T>),
+      _id: _id++,
+    }
+  }
+
+  function addItem(item: T) {
+    list.value.push(createItem(item))
+  }
+
+  function removeItem(item: IListItem<T>) {
+    const index = list.value.indexOf(item)
+    if (index !== -1)
+      list.value.splice(index, 1)
+  }
+
   return {
     list,
+    addItem,
+    removeItem,
     onNext,
     onReset,
     status,

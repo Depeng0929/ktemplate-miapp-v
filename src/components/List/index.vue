@@ -19,7 +19,7 @@ const {
 
 <template>
   <div>
-    <template v-for="item in list" :key="item.id">
+    <template v-for="item in list" :key="item._id || item.id">
       <slot :item="item" />
     </template>
     <template v-if="show">
