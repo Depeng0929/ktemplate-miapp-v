@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import vars from '~/styles/vars.module.scss'
-import { hexToRgb, parseRect } from '~/utils';
+import { hexToRgb, isVideo, parseRect } from '~/utils';
 
 const {
   list = [],
@@ -26,7 +26,7 @@ function clickItem(index: number) {
   current = index
 }
 
-function change(e: MinappEvent) {
+function onChange(e: MinappEvent) {
   current = e.detail.current
 }
 
@@ -41,9 +41,10 @@ function change(e: MinappEvent) {
     field="content"
     @clickItem="clickItem"
   >
-    <swiper :current="current" :style="swiperStyle" @change="change">
+    <swiper :current="current" :style="swiperStyle" @change="onChange">
       <swiper-item v-for="(item, index) in list" :key="index">
-        <AppImage :src="item" height="100%" :is-preview="true" />
+        <AppVideo v-if="isVideo(item)" :style="{height:'100%'}" :src="item" />
+        <AppImage v-else :src="item" height="100%" :is-preview="true" />
       </swiper-item>
     </swiper>
   </uni-swiper-dot>
