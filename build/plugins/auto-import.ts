@@ -17,7 +17,7 @@ export function createAutoImport() {
         ],
       },
       {
-        '~/utils/tools': [
+        '~/utils/index': [
           'toast',
           'alert',
           'confirm',

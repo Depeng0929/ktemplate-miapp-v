@@ -9,9 +9,9 @@ declare global {
   const $shallowRef: typeof import('vue/macros')['$shallowRef']
   const $toRef: typeof import('vue/macros')['$toRef']
   const EffectScope: typeof import('vue')['EffectScope']
-  const alert: typeof import('~/utils/tools')['alert']
+  const alert: typeof import('~/utils/index')['alert']
   const computed: typeof import('vue')['computed']
-  const confirm: typeof import('~/utils/tools')['confirm']
+  const confirm: typeof import('~/utils/index')['confirm']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
   const debug: typeof import('@depeng9527/tools')['debug']
@@ -21,7 +21,7 @@ declare global {
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
-  const hideLoading: typeof import('~/utils/tools')['hideLoading']
+  const hideLoading: typeof import('~/utils/index')['hideLoading']
   const inject: typeof import('vue')['inject']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
@@ -57,11 +57,11 @@ declare global {
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
-  const showLoading: typeof import('~/utils/tools')['showLoading']
+  const showLoading: typeof import('~/utils/index')['showLoading']
   const toRaw: typeof import('vue')['toRaw']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
-  const toast: typeof import('~/utils/tools')['toast']
+  const toast: typeof import('~/utils/index')['toast']
   const triggerRef: typeof import('vue')['triggerRef']
   const unref: typeof import('vue')['unref']
   const useAttrs: typeof import('vue')['useAttrs']
@@ -88,9 +88,9 @@ declare module '@vue/runtime-core' {
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly alert: UnwrapRef<typeof import('~/utils/tools')['alert']>
+    readonly alert: UnwrapRef<typeof import('~/utils/index')['alert']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
-    readonly confirm: UnwrapRef<typeof import('~/utils/tools')['confirm']>
+    readonly confirm: UnwrapRef<typeof import('~/utils/index')['confirm']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly debug: UnwrapRef<typeof import('@depeng9527/tools')['debug']>
@@ -100,7 +100,7 @@ declare module '@vue/runtime-core' {
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
-    readonly hideLoading: UnwrapRef<typeof import('~/utils/tools')['hideLoading']>
+    readonly hideLoading: UnwrapRef<typeof import('~/utils/index')['hideLoading']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
@@ -136,11 +136,11 @@ declare module '@vue/runtime-core' {
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
-    readonly showLoading: UnwrapRef<typeof import('~/utils/tools')['showLoading']>
+    readonly showLoading: UnwrapRef<typeof import('~/utils/index')['showLoading']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
-    readonly toast: UnwrapRef<typeof import('~/utils/tools')['toast']>
+    readonly toast: UnwrapRef<typeof import('~/utils/index')['toast']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
