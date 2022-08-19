@@ -1,30 +1,32 @@
 import { hexToRgba, isValidHex } from 'hex-and-rgba/esm/index.mjs';
 import { isNumberLike } from '@depeng9527/tools';
 
-export const alert = function(msg: string, callback: any = null) {
-  uni.showModal({
-    title: '提示',
-    content: msg,
-    showCancel: false,
-    success(res) {
-      if (res.confirm)
-        if (callback) callback()
-    },
+export function alert(msg: string): Promise<void> {
+  return new Promise((resolve) => {
+    uni.showModal({
+      title: '提示',
+      content: msg,
+      showCancel: false,
+      success(res) {
+        if (res.confirm)
+          resolve()
+      },
+    })
   })
 }
 
-export const confirm = function(msg: string, calConfirm: any = null, calCancel: any = null) {
-  uni.showModal({
-    title: '提示',
-    content: msg,
-    success(res) {
-      if (res.confirm) {
-        if (calConfirm) calConfirm()
-      }
-      else if (res.cancel) {
-        if (calCancel) calCancel()
-      }
-    },
+export function confirm(msg: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    uni.showModal({
+      title: '提示',
+      content: msg,
+      success(res) {
+        if (res.confirm)
+          resolve()
+        else
+          reject(new Error('cancel'))
+      },
+    })
   })
 }
 
