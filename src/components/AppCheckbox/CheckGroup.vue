@@ -19,6 +19,8 @@ provide(injectionCheckGroup, reactive({
 
 watch(() => modelValue, (val) => {
   current = val
+  emit('update:modelValue', val)
+  emit('change', val)
 })
 
 function onChange(e: MinappEvent) {

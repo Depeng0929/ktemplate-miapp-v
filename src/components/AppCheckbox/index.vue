@@ -18,7 +18,7 @@ const {
   name: string | number
   size?: 'mini' | 'default'
 }>()
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 let currentVal = $ref(modelValue)
 
 const checkGroup = inject(injectionCheckGroup, null)
@@ -44,6 +44,8 @@ const checkBoxStyles = $computed(() => {
 
 watch(() => modelValue, (val) => {
   currentVal = val
+  emit('update:modelValue', currentVal)
+  emit('change', currentVal)
 })
 
 function onCheckBoxChange(e: MinappEvent) {
@@ -52,6 +54,7 @@ function onCheckBoxChange(e: MinappEvent) {
 
   currentVal = isChecked
   emit('update:modelValue', currentVal)
+  emit('change', currentVal)
 }
 
 </script>
