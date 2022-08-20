@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./src/components/AppButton.vue')['default']
+    AppCheckbox: typeof import('./src/components/AppCheckbox/index.vue')['default']
     AppImage: typeof import('./src/components/AppImage.vue')['default']
     AppPage: typeof import('./src/components/AppPage/index.vue')['default']
     AppPicker: typeof import('./src/components/AppPicker/index.vue')['default']
