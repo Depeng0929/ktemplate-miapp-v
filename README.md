@@ -1,5 +1,5 @@
 # template-minapp
-个人常用的uniapp模版,支持微信和小程序.
+个人常用的uniapp模版,支持微信和支付宝.
 
 ## Support
 * 微信基础库 >= `2.11.0`
