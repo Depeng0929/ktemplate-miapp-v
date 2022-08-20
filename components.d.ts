@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     AppVideo: typeof import('./src/components/AppVideo/index.vue')['default']
     Auth: typeof import('./src/components/AppPage/Auth.vue')['default']
     Checkbox: typeof import('./src/components/AppCheckbox/Checkbox.vue')['default']
+    CheckBox: typeof import('./src/components/AppCheckbox/checkBox.vue')['default']
     CheckGroup: typeof import('./src/components/AppCheckbox/CheckGroup.vue')['default']
     List: typeof import('./src/components/List/index.vue')['default']
     Preload: typeof import('./src/components/AppPage/Preload.vue')['default']
