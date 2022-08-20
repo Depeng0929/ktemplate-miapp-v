@@ -121,10 +121,10 @@ const submit = reactive(useButton(onClick))
 
 * useSearchParams: 获取参数
 
-* useLoading: 常用于提交
+* useFetch: fetch with loading
 
 ```js
-useLoading(sleep(1000))
+useFetch(sleep(1000))
 ```
 
 * whenever

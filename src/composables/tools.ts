@@ -23,7 +23,7 @@ export function whenever<T>(source: WatchSource<T | false | null | undefined>, c
   )
 }
 
-export function useLoading<T = any>(
+export function useFetch<T = any>(
   promise: Promise<T> | ((...args: any[]) => Promise<T>),
   title = '加载中',
 ) {
