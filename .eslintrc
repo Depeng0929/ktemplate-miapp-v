@@ -1,5 +1,5 @@
 {
-  "extends": "@depeng9527/eslint-config",
+  "extends": "@antfu",
   "rules": {
     "vue/no-setup-props-destructure": "off",
     "semi": "off",

@@ -62,13 +62,13 @@
     "vue-i18n": "^9.2.2"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.26.1",
     "@dcasia/mini-program-tailwind-webpack-plugin": "^1.5.4",
     "@dcloudio/types": "^3.0.13",
     "@dcloudio/uni-automator": "^3.0.0-alpha-3050420220804008",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3050420220804008",
     "@dcloudio/uni-helper-json": "^1.0.13",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3050420220804008",
-    "@depeng9527/eslint-config": "^1.4.3",
     "@types/node": "^18.7.9",
     "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
