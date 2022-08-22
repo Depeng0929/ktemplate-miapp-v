@@ -56,7 +56,6 @@ function onCheckBoxChange(e: MinappEvent) {
   emit('update:modelValue', currentVal)
   emit('change', currentVal)
 }
-
 </script>
 
 <template>

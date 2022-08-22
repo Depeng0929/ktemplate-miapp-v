@@ -3,7 +3,7 @@
     "pages.json": "jsonc",
     "manifest.json": "jsonc"
   },
-  "better-comments.tags":[
+  "better-comments.tags": [
     {
       "tag": "#",
       "color": "#18b566",
@@ -12,7 +12,7 @@
       "backgroundColor": "transparent",
       "bold": true,
       "italic": false
-     },
+    }
   ],
   "scss.lint.unknownAtRules": "ignore"
 }

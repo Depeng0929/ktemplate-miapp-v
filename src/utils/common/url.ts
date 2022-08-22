@@ -6,11 +6,13 @@ import type { IOnloadOptions } from '~/types'
  * @param json {object} 参数对象
  * @returns {string} 返回字符串
  */
-export function urlParamStr(json: Record<string, string|number|boolean>) {
-  if (!json) return ''
+export function urlParamStr(json: Record<string, string | number | boolean>) {
+  if (!json)
+    return ''
   return cleanArray(
     Object.keys(json).map((key) => {
-      if (json[key] === undefined) return ''
+      if (json[key] === undefined)
+        return ''
       return `${encodeURIComponent(key)}=${encodeURIComponent(json[key])}`
     }),
   ).join('&')
@@ -42,7 +44,8 @@ export function getQueryObject<T extends Object>(url: string): T {
 export function parseOnLoadOptions<T = {}>(options: IOnloadOptions<T>): T {
   const { scene } = options
   const isFromScanCode = scene && isString(scene) && /\w+=\w+/g.test(scene)
-  if (!isFromScanCode) return decodeParams(options)
+  if (!isFromScanCode)
+    return decodeParams(options)
 
   return getQueryObject(scene)
 

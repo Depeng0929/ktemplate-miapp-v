@@ -35,11 +35,10 @@ function change(val: string) {
   uqrcode.make()
   uqrcode.draw()
 }
-
 </script>
 
 <template>
-  <view class="mx-auto" :style="{width: `${sizePx}px`, height: `${sizePx}px`}">
+  <view class="mx-auto" :style="{ width: `${sizePx}px`, height: `${sizePx}px` }">
     <canvas id="qrcode" canvas-id="qrcode" :style="{ width: `${sizePx}px`, height: `${sizePx}px` }" />
   </view>
 </template>

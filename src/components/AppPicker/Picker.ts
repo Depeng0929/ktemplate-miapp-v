@@ -43,11 +43,13 @@ export function selectorPicker(
 ) {
   let current = $ref(props.modelValue || '')
   const text = $computed(() => {
-    if (!props.list?.length || props.modelValue === '') return ''
+    if (!props.list?.length || props.modelValue === '')
+      return ''
     return find(current, props.list)
   })
   const index = $computed(() => {
-    if (!props.list?.length || props.modelValue === '') return 0
+    if (!props.list?.length || props.modelValue === '')
+      return 0
 
     return props.list.findIndex(item => item.key === current)
   })
@@ -59,7 +61,8 @@ export function selectorPicker(
   function onChange(e: MinappEvent) {
     const index = e.detail.value
     const item = props.list![index]
-    if (!item) return
+    if (!item)
+      return
 
     const key = item.key
     if (key === current)

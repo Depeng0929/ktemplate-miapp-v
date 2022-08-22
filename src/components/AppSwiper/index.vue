@@ -29,7 +29,6 @@ function clickItem(index: number) {
 function onChange(e: MinappEvent) {
   current = e.detail.current
 }
-
 </script>
 
 <template>
@@ -39,11 +38,11 @@ function onChange(e: MinappEvent) {
     mode="default"
     :dots-styles="dotsStyles"
     field="content"
-    @clickItem="clickItem"
+    @click-item="clickItem"
   >
     <swiper :current="current" :style="swiperStyle" @change="onChange">
       <swiper-item v-for="(item, index) in list" :key="index">
-        <AppVideo v-if="isVideo(item)" :style="{height:'100%'}" :src="item" />
+        <AppVideo v-if="isVideo(item)" :style="{ height: '100%' }" :src="item" />
         <AppImage v-else :src="item" height="100%" :is-preview="true" />
       </swiper-item>
     </swiper>

@@ -14,24 +14,24 @@ export default defineConfig({
 
   build: process.env.NODE_ENV === 'production'
     ? {
-      target: 'es2015',
-      sourcemap: false,
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: true,
+        target: 'es2015',
+        sourcemap: false,
+        minify: 'terser',
+        terserOptions: {
+          compress: {
+            drop_console: true,
+          },
         },
-      },
-      rollupOptions: {
-        plugins: [
-          process.env.NODE_ENV === 'production' && visualizer({
-            open: true,
-            gzipSize: true,
-            brotliSize: true,
-          }),
-        ],
-      },
-    }
+        rollupOptions: {
+          plugins: [
+            process.env.NODE_ENV === 'production' && visualizer({
+              open: true,
+              gzipSize: true,
+              brotliSize: true,
+            }),
+          ],
+        },
+      }
     : undefined,
 
   resolve: {

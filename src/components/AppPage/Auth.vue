@@ -5,7 +5,6 @@ const route = useRoute()
 const allowAccess = $computed(() => {
   return pageAllowAccess(route.path!)
 })
-
 </script>
 
 <template>

@@ -22,7 +22,6 @@ function createPicker(mode: PickerMode) {
   }
   return reactive(pickerStrategies[mode](props, emit))
 }
-
 </script>
 
 <template>

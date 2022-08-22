@@ -1,4 +1,3 @@
-
 import { useUserStore } from '~/store/user'
 
 /**
@@ -7,7 +6,7 @@ import { useUserStore } from '~/store/user'
  */
 export const loading = ref(false)
 export const error = shallowRef(null)
-export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T>|T | void) {
+export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T> | T | void) {
   const data = ref<T | null>(null)
   const userStore = useUserStore()
 

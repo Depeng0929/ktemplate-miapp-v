@@ -65,7 +65,6 @@ function onPreview() {
     urls: [src],
   })
 }
-
 </script>
 
 <template>

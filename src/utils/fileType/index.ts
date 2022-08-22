@@ -20,7 +20,8 @@ export function fileType(path: string) {
 
 export function isVideo(path: string) {
   const type = fileType(path)
-  if (!type) return false
+  if (!type)
+    return false
 
   return type.includes('video')
 }

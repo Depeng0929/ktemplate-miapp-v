@@ -2,7 +2,8 @@ import to from 'await-to-js'
 import { isEmpty, isNil, sleep } from '@depeng9527/tools'
 
 export async function useAlipay(orderData: Object) {
-  if (isNil(orderData) || isEmpty(orderData)) return false
+  if (isNil(orderData) || isEmpty(orderData))
+    return false
 
   showLoading('正在调用微信支付')
 

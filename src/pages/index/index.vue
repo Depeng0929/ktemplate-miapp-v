@@ -8,7 +8,6 @@ function onLogin() {
 function onMine() {
   router.push('/pages/mine/index')
 }
-
 </script>
 
 <template>

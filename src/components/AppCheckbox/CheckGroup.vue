@@ -30,7 +30,6 @@ function onChange(e: MinappEvent) {
   emit('update:modelValue', arr)
   emit('change', arr)
 }
-
 </script>
 
 <template>

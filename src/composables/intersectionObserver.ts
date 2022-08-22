@@ -1,4 +1,3 @@
-
 export function useIntersectionObserver(
   selector: string,
   callback: (isShow?: boolean, rect?: DOMRect) => void,

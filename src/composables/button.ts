@@ -27,7 +27,7 @@ export function useButton(promiseFn: (...args: unknown[]) => Promise<unknown>) {
     disabled: false,
   })
 
-  const onClick = debounce(500, async() => {
+  const onClick = debounce(500, async () => {
     status.value = {
       loading: true,
       disabled: true,

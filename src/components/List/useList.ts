@@ -31,7 +31,7 @@ export function useList<T = any>(options: ListOptions<T>) {
   }) as ListStatus
   const flag = ref(false)
 
-  const fetchData = async() => {
+  const fetchData = async () => {
     status.loading = true
     flag.value = true
 
@@ -65,7 +65,8 @@ export function useList<T = any>(options: ListOptions<T>) {
       _onNext()
   }
   function _onNext() {
-    if (page.value >= totalPage.value) return false
+    if (page.value >= totalPage.value)
+      return false
 
     page.value += 1
     fetchData()

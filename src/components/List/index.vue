@@ -14,7 +14,6 @@ const {
   isEmpty = false,
   show = false,
 } = defineProps<Props>()
-
 </script>
 
 <template>

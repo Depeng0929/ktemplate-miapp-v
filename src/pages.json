@@ -1,34 +1,34 @@
 {
-    "easycom": {
-        "autoscan": true,
-        "custom": {
-            "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
-        }
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+    }
+  },
+  "globalStyle": {
+    "backgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app"
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "[project-name]"
+      }
     },
-    "globalStyle": {
-        "backgroundColor": "#F8F8F8",
-        "navigationBarBackgroundColor": "#F8F8F8",
-        "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "uni-app"
+    {
+      "path": "pages/mine/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
     },
-    "pages": [
-        {
-            "path": "pages/index/index",
-            "style": {
-                "navigationBarTitleText": "[project-name]"
-            }
-        },
-        {
-            "path": "pages/mine/index",
-            "style": {
-                "navigationBarTitleText": "我的"
-            }
-        },
-        {
-            "path": "pages/login/index",
-            "style": {
-                "navigationBarTitleText": "登录"
-            }
-        }
-    ]
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    }
+  ]
 }
