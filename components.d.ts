@@ -8,14 +8,12 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./src/components/AppButton.vue')['default']
-    AppCheckbox: typeof import('./src/components/AppCheckbox/index.vue')['default']
     AppImage: typeof import('./src/components/AppImage.vue')['default']
     AppPage: typeof import('./src/components/AppPage/index.vue')['default']
     AppPicker: typeof import('./src/components/AppPicker/index.vue')['default']
     AppSwiper: typeof import('./src/components/AppSwiper/index.vue')['default']
     AppVideo: typeof import('./src/components/AppVideo/index.vue')['default']
     Auth: typeof import('./src/components/AppPage/Auth.vue')['default']
-    Checkbox: typeof import('./src/components/AppCheckbox/Checkbox.vue')['default']
     CheckBox: typeof import('./src/components/AppCheckbox/checkBox.vue')['default']
     CheckGroup: typeof import('./src/components/AppCheckbox/CheckGroup.vue')['default']
     List: typeof import('./src/components/List/index.vue')['default']
