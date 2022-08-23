@@ -1,6 +1,7 @@
 import { isNil } from '@depeng9527/tools';
 import type { AjaxRequestConfig, AjaxResponse } from 'uni-ajax';
 import { storage_token } from '~/logic/token'
+import { toast } from '~/utils'
 
 export function requestInterceptors(config: AjaxRequestConfig) {
   const token = storage_token.value
@@ -51,9 +52,6 @@ function handlerError(response: API.ResponseData) {
   }
   else {
     const msg = response.msg
-    msg && uni.showToast({
-      icon: 'none',
-      title: msg,
-    })
+    msg && toast('msg')
   }
 }

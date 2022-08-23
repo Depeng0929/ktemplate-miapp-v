@@ -1,6 +1,7 @@
 import type { WatchCallback, WatchOptions, WatchSource } from 'vue'
 import { watch } from 'vue'
 import { parseOnLoadOptions } from '~/utils'
+import { hideLoading, showLoading } from '~/utils/index'
 
 export function useSearchParams<T extends Record<string, string>>() {
   const params = ref<T>({} as T)
@@ -40,9 +41,7 @@ export function useFetch<T = any>(
 
   async function excute() {
     isLoading.value = true
-    uni.showLoading({
-      title,
-    })
+    showLoading(title)
     isLoading.value = true
     const _promise = typeof promise === 'function'
       ? promise()
@@ -56,7 +55,7 @@ export function useFetch<T = any>(
     }
     finally {
       isLoading.value = false
-      uni.hideLoading()
+      hideLoading()
     }
   }
 }
