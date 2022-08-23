@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { useStystemStore } from '~/store/system'
+import { setup } from '~/setup/index'
 
-const { initSystemInfo } = useStystemStore()
-
-onLaunch(() => {
-  initSystemInfo()
-})
+setup()
 </script>
 
 <style lang="scss">
