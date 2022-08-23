@@ -2,7 +2,7 @@ import { alert, confirm } from '~/utils'
 
 export function checkVersion() {
   onLaunch(() => {
-    if (uni.canIUse('getUpdateManager')) {
+    if (uni.canIUse('getUpdateManager') && uni.getUpdateManager) {
       const updateManager = uni.getUpdateManager()
       updateManager.onCheckForUpdate((res) => {
         if (res.hasUpdate) {

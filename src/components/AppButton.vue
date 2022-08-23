@@ -9,6 +9,7 @@ interface ButtonProps {
   block?: boolean
   className?: string | string[]
   color?: string
+  openType?: 'contact' | 'share' | 'getPhoneNumber' | 'getUserInfo' | 'launchApp' | 'openSetting' | 'feedback' | 'chooseAvatar' | 'share'
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   block = true,
   className = '',
   color = vars.theme,
+  openType,
 } = defineProps<ButtonProps>()
 const emit = defineEmits({
   click: null,
@@ -41,6 +43,7 @@ function onClick(e: Event) {
 <template>
   <view class="w-9/10 mx-auto">
     <button
+      :openType="openType"
       class="app-button"
       :class="buttonStyles"
       :loading="status.loading"
