@@ -1,11 +1,11 @@
 import { objectKeys } from '@depeng9527/tools'
 import mimeTypes from './mime-types.json'
 
-const typeLookup = {} as Record<string, string>
+const fileTypeLookup = {} as Record<string, string>
 objectKeys(mimeTypes).forEach((key) => {
   const extensions = (mimeTypes as any)[key] as string[]
   extensions.forEach((extension) => {
-    typeLookup[extension] = key
+    fileTypeLookup[extension] = key
   })
 })
 
@@ -15,7 +15,7 @@ export function fileType(path: string) {
     return null
   const ext = path.slice(index + 1)
 
-  return typeLookup[ext.toLowerCase()]
+  return fileTypeLookup[ext.toLowerCase()]
 }
 
 export function isVideo(path: string) {
