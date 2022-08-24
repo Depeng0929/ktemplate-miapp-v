@@ -93,12 +93,33 @@ export function useList<T = any>(options: ListOptions<T>) {
     } as IListItem<T>
   }
 
-  function addItem(item: T) {
+  async function addItem(item: T, fetcher?: (item: IListItem<T>) => Promise<void>) {
+    showLoading()
     const processedItem = createItem(item)
+
+    try {
+      fetcher && await fetcher(processedItem)
+    }
+    catch (error) {
+      debug(error)
+      hideLoading()
+    }
+
     list.value.push(processedItem)
   }
 
-  function removeItem(item: IListItem<T>) {
+  async function removeItem(item: IListItem<T>, fetcher?: () => Promise<void>) {
+    showLoading()
+
+    try {
+      fetcher && await fetcher()
+    }
+    catch (error) {
+      debug(error)
+      hideLoading()
+    }
+
+    hideLoading()
     const index = list.value.indexOf(item)
     if (index !== -1)
       list.value.splice(index, 1)
