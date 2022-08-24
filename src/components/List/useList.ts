@@ -86,7 +86,6 @@ export function useList<T = any>(options: ListOptions<T>) {
     const processedItem = isObject(item) ? item as T : { value: item as T }
     const extraItem: ListExtraProps = reactive({
       _id: _id++,
-      animationData: {},
     })
     return {
       ...processedItem,
@@ -100,26 +99,9 @@ export function useList<T = any>(options: ListOptions<T>) {
   }
 
   function removeItem(item: IListItem<T>) {
-    removeAnimation(item, () => {
-      const index = list.value.indexOf(item)
-      if (index !== -1)
-        list.value.splice(index, 1)
-    })
-  }
-  function removeAnimation(item: IListItem<T>, callback?: () => void) {
-    const duration = 200
-    const animation = uni.createAnimation({
-      timingFunction: 'ease-in',
-      duration,
-    })
-
-    animation.opacity(0).scale(0.98, 0.98).step()
-
-    item.animationData = animation.export()
-
-    setTimeout(() => {
-      callback && callback()
-    }, duration)
+    const index = list.value.indexOf(item)
+    if (index !== -1)
+      list.value.splice(index, 1)
   }
 
   return {

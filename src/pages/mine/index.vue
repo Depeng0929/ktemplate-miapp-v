@@ -38,7 +38,11 @@ function onClick() {
     </button>
     <List :list="list" v-bind="status">
       <template #default="{ item }">
-        <view class="w-full h-10 bg-red-500 mt-2 text-center" :animation="item.animationData" @click="removeItem(item)">
+        <view
+          class="w-full h-10 bg-red-500 mt-2 text-center"
+          :animation="item.animationData"
+          @click="removeItem(item)"
+        >
           {{ item.name }}
         </view>
       </template>

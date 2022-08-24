@@ -17,10 +17,11 @@ const {
 </script>
 
 <template>
-  <div>
+  <view>
     <template v-for="item in list" :key="item._id || item.id">
       <slot :item="item" />
     </template>
+
     <template v-if="show">
       <slot v-if="loading" name="pending">
         <uni-load-more status="loading" />
@@ -34,5 +35,5 @@ const {
         </view>
       </slot>
     </template>
-  </div>
+  </view>
 </template>
