@@ -9,17 +9,25 @@ objectKeys(mimeTypes).forEach((key) => {
   })
 })
 
-export function fileType(path: string) {
-  const index = path.lastIndexOf('.')
-  if (index === -1)
-    return null
-  const ext = path.slice(index + 1)
+export function fileMime(path: string) {
+  const ext = getExtName(path)
+  if (!ext)
+    return
 
   return fileTypeLookup[ext.toLowerCase()]
 }
 
+export function getExtName(path: string) {
+  const index = path.lastIndexOf('.')
+  if (index === -1)
+    return null
+
+  const ext = path.slice(index + 1)
+  return ext
+}
+
 export function isVideo(path: string) {
-  const type = fileType(path)
+  const type = fileMime(path)
   if (!type)
     return false
 
