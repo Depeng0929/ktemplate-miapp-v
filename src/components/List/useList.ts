@@ -1,6 +1,8 @@
 import type { Ref } from 'vue'
 import { isObject } from '@depeng9527/tools'
+import to from 'await-to-js'
 import type { IListItem, ListExtraProps } from './type'
+import { confirm } from '~/utils/index'
 import type { ListOptions, ListStatus } from '~/types'
 
 export function useList<T = any>(options: ListOptions<T>) {
@@ -105,21 +107,27 @@ export function useList<T = any>(options: ListOptions<T>) {
       hideLoading()
     }
 
+    hideLoading()
     list.value.push(processedItem)
   }
 
   async function removeItem(item: IListItem<T>, fetcher?: () => Promise<void>) {
-    showLoading()
+    const [err] = await to(confirm('确定要删除此项？'))
+    if (err)
+      return false
 
-    try {
-      fetcher && await fetcher()
-    }
-    catch (error) {
-      debug(error)
-      hideLoading()
+    if (fetcher) {
+      showLoading()
+      const [err] = await to(fetcher())
+      if (err) {
+        debug(err)
+        hideLoading()
+        return false
+      }
     }
 
     hideLoading()
+    toast('删除成功', 'success')
     const index = list.value.indexOf(item)
     if (index !== -1)
       list.value.splice(index, 1)
