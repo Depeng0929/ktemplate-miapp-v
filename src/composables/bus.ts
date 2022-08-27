@@ -29,6 +29,7 @@ export function useEventBus<T extends string, P = any>(key: T) {
     const _off = () => off()
 
     // auto unsubscribe when scope get disposed
+    // @ts-expect-error type
     scope?.cleanups?.push(_off)
   }
 
