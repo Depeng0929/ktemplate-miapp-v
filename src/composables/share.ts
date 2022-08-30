@@ -1,25 +1,22 @@
-import type { MayBeRef } from '~/types'
+import { onShareAppMessage } from '@dcloudio/uni-app'
 
-interface ShareOptions {
+export function useShare(options: {
   title: string
   path: `/${string}`
-  imageUrl?: string
-}
-
-export function useShare(options: MayBeRef<ShareOptions>) {
-  const shareOptions = ref(options)
-
-  onReady(() => {
-    uni.showShareMenu({})
+  imageUrl: string
+  desc?: string
+}) {
+  onBeforeMount(() => {
+    // @ts-expect-error showShareMenu
+    uni.showShareMenu()
   })
 
-  // TODO: up for application
   onBeforeUnmount(() => {
-    // @ts-expect-error uni type support?
+    // @ts-expect-error showShareMenu
     uni.hideShareMenu()
   })
 
   onShareAppMessage(() => {
-    return shareOptions.value
+    return options
   })
 }
