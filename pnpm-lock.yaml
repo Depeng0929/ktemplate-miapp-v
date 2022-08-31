@@ -41,10 +41,10 @@ specifiers:
   sass: ^1.54.5
   terser: ^5.15.0
   typescript: ^4.8.2
-  u-qrcode: ^3.2.2
   uni-ajax: ^3.0.0
   unplugin-auto-import: ^0.11.2
   unplugin-vue-components: ^0.22.4
+  uqrcodejs: ^3.5.1
   vite: 2.9.14
   vite-plugin-windicss: ^1.8.7
   vitest: ^0.22.1
@@ -75,8 +75,8 @@ dependencies:
   pinia: 2.0.21_bw4xur2vyhvhfd4whxbr7emp4u
   qs: 6.11.0
   rambda: 7.2.1
-  u-qrcode: 3.2.2
   uni-ajax: 3.0.0
+  uqrcodejs: 3.5.1
   vue: 3.2.37
   vue-i18n: 9.2.2_vue@3.2.37
 
@@ -4936,10 +4936,6 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /u-qrcode/3.2.2:
-    resolution: {integrity: sha512-ywj5Xcow7Lfy+s5plXynZdJB8A6Zy3kJ3e5PcJKm3fqSFwqvM8DDpCJ6B8qqMibuHBxJGkCFoWFzQ1v1gsRXGA==}
-    dev: false
-
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
     dependencies:
@@ -5100,6 +5096,10 @@ packages:
       browserslist: 4.21.3
       escalade: 3.1.1
       picocolors: 1.0.0
+
+  /uqrcodejs/3.5.1:
+    resolution: {integrity: sha512-4HPtnfl+IC2QCsSrKerejl9ZeAKDZZZlpjr0HC5P1dSO/KcwlvuuyNeFkYUsNhhHDRJMVIMqAd/X1vGCyPCr4A==}
+    dev: false
 
   /uri-js/4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}

@@ -1,5 +1,6 @@
 <script setup lang='ts'>
-import UQRCode from 'u-qrcode'
+import UQRCode from 'uqrcodejs'
+
 const props = defineProps({
   id: {
     type: String,
@@ -25,15 +26,12 @@ watch(() => props.code, (val) => {
 
 function change(val: string) {
   const ctx = uni.createCanvasContext(props.id)
-  const uqrcode: any = new UQRCode(
-    {
-      text: val,
-      size: sizePx,
-    },
-    ctx,
-  )
-  uqrcode.make()
-  uqrcode.draw()
+  const qr = new UQRCode()
+  qr.data = val
+  qr.size = sizePx
+  qr.make()
+  qr.canvasContext = ctx
+  qr.drawCanvas()
 }
 </script>
 

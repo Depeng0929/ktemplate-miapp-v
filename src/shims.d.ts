@@ -23,13 +23,14 @@ declare module 'hex-and-rgba/esm/index.mjs' {
   export function isValidHex(hex: string): boolean
 }
 
-declare module 'u-qrcode' {
+declare module 'uqrcodejs' {
   export default class QRCode {
-    constructor(options: {
-      text: string
-      size: number
-    }, ctx: any)
+    public data: string
+    public size: number
+    public canvasContext: CanvasContext
 
-    toDataURL(): string
+    constructor()
+    make():void
+    drawCanvas(): void
   }
 }
