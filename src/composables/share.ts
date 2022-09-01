@@ -6,6 +6,8 @@ export function useShare(options: {
   imageUrl: string
   desc?: string
 }) {
+  // #ifndef H5
+
   onBeforeMount(() => {
     // @ts-expect-error showShareMenu
     uni.showShareMenu()
@@ -15,6 +17,8 @@ export function useShare(options: {
     // @ts-expect-error showShareMenu
     uni.hideShareMenu()
   })
+
+  // #endif
 
   onShareAppMessage(() => {
     return options
