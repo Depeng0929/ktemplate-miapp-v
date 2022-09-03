@@ -41,7 +41,7 @@ export function getQueryObject<T extends Object>(url: string): T {
   return obj as T
 }
 
-export function parseOnLoadOptions<T = {}>(options: IOnloadOptions<T>): T {
+export function parseOnLoadOptions<T extends Object>(options: IOnloadOptions<T>): T {
   const { scene } = options
   const isFromScanCode = scene && isString(scene) && /\w+=\w+/g.test(scene)
   if (!isFromScanCode)
@@ -49,9 +49,10 @@ export function parseOnLoadOptions<T = {}>(options: IOnloadOptions<T>): T {
 
   return getQueryObject(scene)
 
-  function decodeParams<T extends Partial<Record<string, string>>>(options: T): T {
+  function decodeParams<T extends Partial<Object>>(options: T): T {
     const result = {} as any
     Object.keys(options).forEach((key) => {
+      // @ts-expect-error none
       result[key] = decodeURIComponent(options[key]!)
     })
     return result as T
