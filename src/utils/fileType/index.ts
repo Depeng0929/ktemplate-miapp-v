@@ -17,6 +17,10 @@ export function fileMime(path: string) {
   return fileTypeLookup[ext.toLowerCase()]
 }
 
+export function fileName(path: string) {
+  return path.replace(/^.*[\\\/]/, '')
+}
+
 export function getExtName(path: string) {
   const index = path.lastIndexOf('.')
   if (index === -1)
