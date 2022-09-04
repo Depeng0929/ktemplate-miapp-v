@@ -1,4 +1,5 @@
 import { isString } from '@depeng9527/tools'
+import qs from 'qs'
 import type { IOnloadOptions } from '~/types'
 
 /**
@@ -6,39 +7,19 @@ import type { IOnloadOptions } from '~/types'
  * @param json {object} 参数对象
  * @returns {string} 返回字符串
  */
-export function urlParamStr(json: Record<string, string | number | boolean>) {
+export function paramStringify(json: Record<string, string | number | boolean>) {
   if (!json)
     return ''
-  return cleanArray(
-    Object.keys(json).map((key) => {
-      if (json[key] === undefined)
-        return ''
-      return `${encodeURIComponent(key)}=${encodeURIComponent(json[key])}`
-    }),
-  ).join('&')
-
-  function cleanArray(actual: string[]) {
-    const newArray = []
-    for (let i = 0; i < actual.length; i++) {
-      if (actual[i])
-        newArray.push(actual[i])
-    }
-    return newArray
-  }
+  return qs.stringify(json, {
+    encoder(str) {
+      return encodeURIComponent(str)
+    },
+  })
 }
 
-export function getQueryObject<T extends Object>(url: string): T {
+export function urlParams<T extends Object>(url: string): T {
   const search = url.substring(url.lastIndexOf('?') + 1)
-  const obj = {} as any
-  const reg = /([^?&=]+)=([^?&=]*)/g
-  search.replace(reg, (rs, $1, $2) => {
-    const name = decodeURIComponent($1)
-    let val = decodeURIComponent($2)
-    val = String(val)
-    obj[name] = val
-    return rs
-  })
-  return obj as T
+  return qs.parse(search) as any as T
 }
 
 export function parseOnLoadOptions<T extends Object>(options: IOnloadOptions<T>): T {
@@ -47,13 +28,13 @@ export function parseOnLoadOptions<T extends Object>(options: IOnloadOptions<T>)
   if (!isFromScanCode)
     return decodeParams(options)
 
-  return getQueryObject(scene)
+  return urlParams(scene)
 
   function decodeParams<T extends Partial<Object>>(options: T): T {
     const result = {} as any
     Object.keys(options).forEach((key) => {
       // @ts-expect-error none
-      result[key] = decodeURIComponent(options[key]!)
+      result[decodeURIComponent(key)] = decodeURIComponent(options[key]!)
     })
     return result as T
   }

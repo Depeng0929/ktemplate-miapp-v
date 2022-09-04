@@ -1,14 +1,18 @@
 import { describe, expect, it } from 'vitest'
-import { getQueryObject, parseOnLoadOptions, urlParamStr } from '~/utils'
+import { paramStringify, parseOnLoadOptions, urlParams } from '~/utils'
 
 describe('utils/url', () => {
   it('urlParamStr', () => {
-    expect(urlParamStr({ name: 2, age: '12' })).toBe('name=2&age=12')
+    expect(paramStringify({ name: 2, age: '12' })).toBe('name=2&age=12')
+    expect(paramStringify({ url: 'http://www.baidu.com' })).toEqual('url=http%3A%2F%2Fwww.baidu.com')
   })
 
   it('getQueryObject', () => {
-    expect(getQueryObject('https://www.baidu.com/?tn=34131172_13_oem_dg')).toEqual({
+    expect(urlParams('https://www.baidu.com/?tn=34131172_13_oem_dg')).toEqual({
       tn: '34131172_13_oem_dg',
+    })
+    expect(urlParams('https://www.4399.com?url=http%3A%2F%2Fwww.baidu.com')).toEqual({
+      url: 'http://www.baidu.com',
     })
   })
 
