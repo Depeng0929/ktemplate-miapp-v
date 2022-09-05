@@ -14,7 +14,7 @@ const {
   /**
    * 你无需写/src/static/xxx.img，只需要写xxx.img即可
    */
-  src?: string
+  src?: `/${string}`
   width?: string | number
   height?: string | number
   /**
@@ -34,7 +34,7 @@ const imageURL = computed(() => {
   return src
     ? isExternal(src)
       ? src
-      : `/static/${src}`
+      : `/static${src}`
     : ''
 })
 const showPlaceholder = computed(() => {

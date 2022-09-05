@@ -11,22 +11,26 @@ const {
 }>()
 let current = $ref(0)
 
-const dotsStyles = {
-  backgroundColor: hexToRgb(vars.theme, 0.3),
-  border: `1px ${hexToRgb(vars.theme, 0.3)}, solid`,
-  color: '#fff',
-  selectedBackgroundColor: vars.theme,
-  selectedBorder: vars.theme,
-}
-const swiperStyle = {
-  height: parseRect(height),
-}
+const dotsStyles = $computed(() => {
+  return {
+    backgroundColor: hexToRgb(vars.theme, 0.3),
+    border: `1px ${hexToRgb(vars.theme, 0.3)}, solid`,
+    color: '#fff',
+    selectedBackgroundColor: vars.theme,
+    selectedBorder: vars.theme,
+  }
+})
+const swiperStyle = $computed(() => {
+  return {
+    height: parseRect(height),
+  }
+})
 
-function clickItem(index: number) {
+function onClickDotItem(index: number) {
   current = index
 }
 
-function onChange(e: MinappEvent) {
+function onSwipe(e: MinappEvent) {
   current = e.detail.current
 }
 </script>
@@ -38,9 +42,9 @@ function onChange(e: MinappEvent) {
     mode="default"
     :dots-styles="dotsStyles"
     field="content"
-    @click-item="clickItem"
+    @click-item="onClickDotItem"
   >
-    <swiper :current="current" :style="swiperStyle" @change="onChange">
+    <swiper :current="current" :style="swiperStyle" @change="onSwipe">
       <swiper-item v-for="(item, index) in list" :key="index">
         <AppVideo v-if="isVideo(item)" :style="{ height: '100%' }" :src="item" />
         <AppImage v-else :src="item" height="100%" :is-preview="true" />

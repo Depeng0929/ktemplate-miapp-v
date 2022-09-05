@@ -1,6 +1,6 @@
 import { isNil } from '@depeng9527/tools';
 import type { AjaxRequestConfig, AjaxResponse } from 'uni-ajax';
-import { storage_token } from '~/logic/token'
+import { storage_token } from '~/logic/storage'
 import { toast } from '~/utils'
 
 export function requestInterceptors(config: AjaxRequestConfig) {

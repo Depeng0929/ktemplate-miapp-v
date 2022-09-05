@@ -1,5 +1,5 @@
 import { ensurePrefix } from '@depeng9527/tools'
-import { storage_token } from '~/logic/token'
+import { storage_token } from '~/logic/storage'
 import type { RoutePath } from '~/types'
 
 export function pageInWhiteList(url: RoutePath) {
