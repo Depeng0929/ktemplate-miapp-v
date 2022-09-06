@@ -67,7 +67,6 @@ usePageShow(() => {
 * AppButton: 按钮组件
 
 ```vue
-
 <AppButton :status="submit.status" @click="submit.onClick">
   {{ slotProps.value }}
 </AppButton>
@@ -121,10 +120,10 @@ const submit = reactive(useButton(onClick))
 
 * useSearchParams: 获取参数
 
-* useFetch: fetch with loading
+* useAsyncState: fetch with loading
 
 ```js
-useFetch(sleep(1000))
+useAsyncState(sleep(1000))
 ```
 
 * whenever

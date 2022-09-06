@@ -24,7 +24,7 @@ export function whenever<T>(source: WatchSource<T | false | null | undefined>, c
   )
 }
 
-export function useFetch<T = any>(
+export function useAsyncState<T = any>(
   promise: Promise<T> | ((...args: any[]) => Promise<T>),
   title = '加载中',
 ) {
