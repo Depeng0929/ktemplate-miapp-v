@@ -13,6 +13,7 @@ function onMine() {
 <template>
   <AppPage>
     <uni-badge text="1" type="primary" />
+    <Avatar src="" />
 
     <AppButton @click="onLogin">
       授权登录

@@ -14,7 +14,7 @@ const {
   /**
    * 你无需写/src/static/xxx.img，只需要写xxx.img即可
    */
-  src?: `/${string}`
+  src?: `/${string}` | string
   width?: string | number
   height?: string | number
   /**
