@@ -6,11 +6,23 @@
     }
   },
   "globalStyle": {
-    "backgroundColor": "#F8F8F8",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app"
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "[project-name]",
+    "navigationBarBackgroundColor": "#1B2B34",
+    "backgroundColor": "#F2F2F2"
   },
+  // "tabBar": {
+  //   "selectedColor": "#fff",
+  //   "color": "#fff",
+  //   "backgroundColor": "#ffffff",
+  //   "borderStyle": "white",
+  //   "list": [
+  //     {
+  //       "pagePath": "pages/mine/index",
+  //       "text": " 我的"
+  //     }
+  //   ]
+  // },
   "pages": [
     {
       "path": "pages/index/index",
