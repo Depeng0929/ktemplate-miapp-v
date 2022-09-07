@@ -12,10 +12,10 @@
     "backgroundColor": "#F2F2F2"
   },
   // "tabBar": {
-  //   "selectedColor": "#fff",
-  //   "color": "#fff",
-  //   "backgroundColor": "#ffffff",
-  //   "borderStyle": "white",
+  //   "selectedColor": "#1B2B34",
+  //   "color": "#AAAAAA",
+  //   "backgroundColor": "#FFFFFF",
+  //   "borderStyle": "#F2F2F2",
   //   "list": [
   //     {
   //       "pagePath": "pages/mine/index",
