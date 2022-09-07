@@ -5,3 +5,12 @@
 .flex-center {
   @apply flex items-center;
 }
+
+.border-base {
+  @apply border-gray-200 dark:border-dark-200 border-solid;
+}
+
+
+.border {
+  @extend .border-base;
+}
