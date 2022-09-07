@@ -34,7 +34,7 @@
 
 ## 内置组件
 
-* AppPage: 每个页面的根节点，用于权限控制和属性配置
+* AppPage: 每个页面的根节点，用于权限控制和属性配置。结合usePageShow使用。
 
 ```vue
 usePageShow(() => {

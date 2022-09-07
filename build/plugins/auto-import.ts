@@ -12,10 +12,9 @@ export function createAutoImport() {
         ],
       },
       {
-        '~/logic/page-loading': [
+        '~/logic/guard/page-loading': [
           'usePageShow',
-        ],
-      },
+        ],      },
       {
         '~/utils/index': [
           'toast',
