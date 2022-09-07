@@ -11,18 +11,20 @@
     "navigationBarBackgroundColor": "#1B2B34",
     "backgroundColor": "#F2F2F2"
   },
-  // "tabBar": {
-  //   "selectedColor": "#1B2B34",
-  //   "color": "#AAAAAA",
-  //   "backgroundColor": "#FFFFFF",
-  //   "borderStyle": "#F2F2F2",
-  //   "list": [
-  //     {
-  //       "pagePath": "pages/mine/index",
-  //       "text": " 我的"
-  //     }
-  //   ]
-  // },
+  "tabBar": {
+    "selectedColor": "#1B2B34",
+    "color": "#AAAAAA",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/mine/index",
+        "text": " 我的",
+        "iconPath": "",
+        "selectedIconPath": ""
+      }
+    ]
+  },
   "pages": [
     {
       "path": "pages/index/index",
