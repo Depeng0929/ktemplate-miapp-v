@@ -61,6 +61,9 @@ function onClick(e: Event) {
   border: 0 none;
   font-size: 14px;
   @apply rounded text-white cursor-pointer px-4 py-1 ;
+  &:active {
+    @apply opacity-85;
+  }
   &::after {
     border: none;
   }
