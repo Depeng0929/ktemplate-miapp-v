@@ -15,7 +15,7 @@ const pageStyles = $computed(() => {
 </script>
 
 <template>
-  <div class="app-page pt-[1px]" :style="pageStyles">
+  <div class="app-page overflow-hidden" :style="pageStyles">
     <Auth>
       <Preload>
         <slot />
