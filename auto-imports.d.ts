@@ -67,7 +67,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
-  const usePageShow: typeof import('~/logic/page-loading')['usePageShow']
+  const usePageShow: typeof import('~/logic/guard/page-loading')['usePageShow']
   const useRoute: typeof import('~/composables/router')['useRoute']
   const useRouter: typeof import('~/composables/router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
@@ -146,7 +146,7 @@ declare module '@vue/runtime-core' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
-    readonly usePageShow: UnwrapRef<typeof import('~/logic/page-loading')['usePageShow']>
+    readonly usePageShow: UnwrapRef<typeof import('~/logic/guard/page-loading')['usePageShow']>
     readonly useRoute: UnwrapRef<typeof import('~/composables/router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('~/composables/router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>

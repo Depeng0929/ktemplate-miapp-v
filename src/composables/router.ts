@@ -16,7 +16,7 @@ class AppRouter {
     return this.checkPermission(url)
       .then(() => {
         return uni.navigateTo({
-          url: this.setupParams(url, params),
+          url: setupParams(url, params),
         })
       })
   }
@@ -25,7 +25,7 @@ class AppRouter {
     return this.checkPermission(url)
       .then(() => {
         return uni.redirectTo({
-          url: this.setupParams(url, params),
+          url: setupParams(url, params),
         })
       })
   }
@@ -40,18 +40,12 @@ class AppRouter {
   }
 
   private checkPermission(url: RoutePath) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       if (pageAllowAccess(url))
         resolve(true)
       else
-        reject(new Error('Not Allow Access'))
+        resolve(false)
     })
-  }
-
-  private setupParams(url: RoutePath, params?: Record<string, string>) {
-    if (!params)
-      return url
-    return url += `?${paramStringify(params)}`
   }
 }
 
@@ -64,8 +58,19 @@ export function useRoute<T extends Object>() {
   const page = pages[pages.length - 1]
   const options = (page as any).options as IOnloadOptions<T>
 
-  return {
+  const result = {
     path: `/${page.route}` as RoutePath,
     query: parseOnLoadOptions<T>(options || {}),
   }
+
+  return {
+    ...result,
+    fullPath: setupParams(result.path, result.query as any),
+  }
+}
+
+function setupParams(url: RoutePath, params?: Record<string, string>) {
+  if (!params)
+    return url
+  return url += `?${paramStringify(params)}`
 }

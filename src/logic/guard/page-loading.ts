@@ -1,4 +1,5 @@
 import { onShow } from '@dcloudio/uni-app'
+import { handleNoPermissions } from './intercept'
 import { useUserStore } from '~/store/user'
 import { pageAllowAccess } from '~/logic/guard/permission-guard'
 import { confirm } from '~/utils'
@@ -12,7 +13,6 @@ export const error = shallowRef(null)
 export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T> | T | void) {
   const userStore = useUserStore()
   const route = useRoute()
-  const router = useRouter()
 
   const data = ref<T | null>(null)
 
@@ -40,17 +40,11 @@ export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T> | 
   }
 
   function checkPermission() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       // 没有token
       if (!pageAllowAccess(route.path)) {
-        confirm('当前页面不可访问，请先登录!')
-          .then(() => {
-            router.push('/pages/login/index')
-            reject(new Error('Not Allow'))
-          })
-          .catch(() => {
-            reject(new Error('Not Allow'))
-          })
+        const url = route.fullPath
+        return handleNoPermissions(url)
       }
 
       return resolve('ok')
