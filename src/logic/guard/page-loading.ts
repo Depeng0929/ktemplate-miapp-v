@@ -2,7 +2,8 @@ import { onShow } from '@dcloudio/uni-app'
 import { handleNoPermissions } from './intercept'
 import { useUserStore } from '~/store/user'
 import { pageAllowAccess } from '~/logic/guard/permission-guard'
-import { confirm } from '~/utils'
+import { setupParams } from '~/utils/common/url'
+import { useSearchParams } from '~/composables/tools'
 
 /**
  * Preload
@@ -12,12 +13,15 @@ export const loading = ref(false)
 export const error = shallowRef(null)
 export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T> | T | void) {
   const userStore = useUserStore()
+  const query = useSearchParams()
   const route = useRoute()
 
   const data = ref<T | null>(null)
 
-  checkPermission().then(() => {
-    init()
+  watch(() => query.value, () => {
+    checkPermission().then(() => {
+      init()
+    })
   })
 
   onShow(() => {
@@ -43,7 +47,7 @@ export async function usePageShow<T = any>(fn: (...args: any[]) => Promise<T> | 
     return new Promise((resolve) => {
       // 没有token
       if (!pageAllowAccess(route.path)) {
-        const url = route.fullPath
+        const url = setupParams(route.path, query.value)
         return handleNoPermissions(url)
       }
 

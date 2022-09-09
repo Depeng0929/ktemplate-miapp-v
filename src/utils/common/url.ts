@@ -1,6 +1,6 @@
-import { isString } from '@depeng9527/tools'
+import { isEmpty, isNil, isString } from '@depeng9527/tools'
 import qs from 'qs'
-import type { IOnloadOptions } from '~/types'
+import type { IOnloadOptions, RoutePath } from '~/types'
 
 /**
  * 组合url参数为字符串
@@ -17,11 +17,13 @@ export function paramStringify(json: Record<string, string | number | boolean>) 
   })
 }
 
+// 获取url参数对象
 export function urlParams<T extends Object>(url: string): T {
   const search = url.substring(url.lastIndexOf('?') + 1)
   return qs.parse(search) as any as T
 }
 
+// 分享点开后，参数解析
 export function parseOnLoadOptions<T extends Object>(options: IOnloadOptions<T>): T {
   const { scene } = options
   const isFromScanCode = scene && isString(scene) && /\w+=\w+/g.test(scene)
@@ -38,4 +40,12 @@ export function parseOnLoadOptions<T extends Object>(options: IOnloadOptions<T>)
     })
     return result as T
   }
+}
+
+// 组合path和参数为跳转地址
+export function setupParams(url: RoutePath, params?: Record<string, string>) {
+  if (isNil(params) || isEmpty(params))
+    return url
+
+  return url += `?${paramStringify(params!)}`
 }

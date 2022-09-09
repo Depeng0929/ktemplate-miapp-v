@@ -3,7 +3,8 @@
  */
 import type { IOnloadOptions, RoutePath } from '~/types'
 import { pageAllowAccess } from '~/logic/guard/permission-guard'
-import { paramStringify, parseOnLoadOptions } from '~/utils'
+import { parseOnLoadOptions } from '~/utils'
+import { setupParams } from '~/utils/common/url'
 
 class AppRouter {
   go(n: number) {
@@ -69,8 +70,3 @@ export function useRoute<T extends Object>() {
   }
 }
 
-function setupParams(url: RoutePath, params?: Record<string, string>) {
-  if (!params)
-    return url
-  return url += `?${paramStringify(params)}`
-}
