@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { range, sleep } from '@depeng9527/tools';
-import { usePageShow } from '~/logic/guard/page-loading';
+import { useEnsureUserInfo } from '~/logic/guard/page-loading';
 import { useList } from '~/components/List/useList'
 
-usePageShow(() => {
+useEnsureUserInfo(() => {
   debug('ok')
 })
 

@@ -13,7 +13,7 @@ export function createAutoImport() {
       },
       {
         '~/logic/guard/page-loading': [
-          'usePageShow',
+          'useEnsureUserInfo',
         ],      },
       {
         '~/utils/index': [
