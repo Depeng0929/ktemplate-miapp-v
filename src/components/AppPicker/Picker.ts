@@ -1,4 +1,4 @@
-import { findValueByKey } from '@depeng9527/tools'
+import { findValueByKey, isNil } from '@depeng9527/tools'
 import type { PickerProps } from '~/components/AppPicker/props'
 
 const find = findValueByKey('key', 'name')
@@ -56,6 +56,22 @@ export function selectorPicker(
 
   watch(() => props.modelValue, (val) => {
     current = val!
+  })
+
+  // auto select first
+  watch(() => props.list, (list) => {
+    if (
+      props.autoChecked
+      && list?.length
+      && (props.modelValue === '' || isNil(props.modelValue))
+    ) {
+      onChange({
+        detail: {
+          value: 0,
+          current: 0,
+        },
+      })
+    }
   })
 
   function onChange(e: MinappEvent) {
