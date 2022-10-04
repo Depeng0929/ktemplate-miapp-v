@@ -8,7 +8,8 @@ interface AppPickerProps extends PickerProps {
   list?: Array<{ key: string | number; name: unknown }>
   end?: string | number
   className?: string | Array<string>
-  autoChecked?: true
+  autoChecked?: boolean
+  disabled?: boolean
 }
 
 const props = defineProps<AppPickerProps>()
@@ -35,6 +36,7 @@ function createPicker(mode: PickerMode) {
       range-key="name"
       start="1950-01-01"
       :end="end"
+      :disabled="props.disabled"
       @change="picker?.onChange"
     >
       <slot :value="picker.text" />

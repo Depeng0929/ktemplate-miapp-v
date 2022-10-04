@@ -6,5 +6,5 @@ export interface PickerProps {
   list?: Array<{ key: string | number; name: unknown }>
   end?: string | number
   className?: string | Array<string>
-  autoChecked?: true
+  autoChecked?: boolean
 }
