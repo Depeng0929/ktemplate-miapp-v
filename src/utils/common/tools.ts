@@ -1,5 +1,5 @@
 import { hexToRgba, isValidHex } from 'hex-and-rgba/esm/index.mjs';
-import { isNumberLike } from '@depeng9527/tools';
+import { isNumberLike, sleep } from '@depeng9527/tools';
 
 export function alert(msg: string): Promise<void> {
   return new Promise((resolve) => {
@@ -34,13 +34,20 @@ export const toast = (
   msg: string,
   icon?: 'success' | 'loading' | 'error' | 'none',
   position?: 'top' | 'center' | 'bottom',
-) => {
-  uni.showToast({
-    title: msg,
-    icon: icon || 'none',
-    duration: 500,
-    mask: true,
-    position: position || 'center',
+  duration?: number,
+): Promise<void> => {
+  return new Promise((resolve) => {
+    const s = duration || 1500
+    uni.showToast({
+      title: msg,
+      icon: icon || 'none',
+      duration: s,
+      mask: true,
+      position: position || 'center',
+    })
+    sleep(s, () => {
+      resolve()
+    })
   })
 }
 
