@@ -14,5 +14,6 @@
       "italic": false
     }
   ],
-  "scss.lint.unknownAtRules": "ignore"
+  "scss.lint.unknownAtRules": "ignore",
+  "svn.ignoreMissingSvnWarning": true
 }
