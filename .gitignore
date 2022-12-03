@@ -12,4 +12,4 @@ docs
 *-lock.json
 .*cache
 stats.html
-proivate.*.key
+private.*.key
