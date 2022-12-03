@@ -2,6 +2,7 @@ import MiniProgramTailwind from '@dcasia/mini-program-tailwind-webpack-plugin/ro
 import uni from '@dcloudio/vite-plugin-uni'
 import Components from 'unplugin-vue-components/vite'
 import WindiCSS from 'vite-plugin-windicss'
+import { createUniHelperPlugin } from './uni-helper'
 import { createAutoImport } from './auto-import'
 
 export function createVitePlugins() {
@@ -20,6 +21,7 @@ export function createVitePlugins() {
     WindiCSS(),
     MiniProgramTailwind(),
     createAutoImport(),
+    ...createUniHelperPlugin(),
   ]
 
   return plugins

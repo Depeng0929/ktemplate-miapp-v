@@ -33,5 +33,5 @@
     "experimentalRuntimeMode": "runtime-uni-app",
     "nativeTags": ["block", "component", "template", "slot"]
   },
-  "exclude": ["dist", "node_modules", "src/plugins"]
+  "exclude": ["dist", "node_modules", "src/plugins", "src/manifest.json"]
 }
