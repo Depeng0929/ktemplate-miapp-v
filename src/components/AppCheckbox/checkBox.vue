@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { CustomEvent } from '@uni-helper/uni-app-types'
 import { toArray } from '@depeng9527/tools';
 import { injectionCheckGroup } from '~/components/AppCheckbox/inject';
 import vars from '~/styles/vars.module.scss'
@@ -15,7 +16,7 @@ const {
   /**
    *  checked name
    */
-  name: string | number
+  name: string
   size?: 'mini' | 'default'
 }>()
 const emit = defineEmits(['update:modelValue', 'change'])
@@ -29,7 +30,7 @@ const checkboxSize = $computed(() => {
   return isGroup ? checkGroup?.size : size
 })
 const checked = $computed(() => {
-  return isGroup ? checkGroup?.value.includes(name) : currentVal
+  return isGroup ? !!checkGroup?.value.includes(name) : !!currentVal
 })
 
 const checkBoxStyles = $computed(() => {
@@ -48,8 +49,8 @@ watch(() => modelValue, (val) => {
   emit('change', currentVal)
 })
 
-function onCheckBoxChange(e: MinappEvent) {
-  const arr = e.detail.value
+function onCheckBoxChange(e: CustomEvent) {
+  const arr = e.detail?.value
   const isChecked = toArray(arr).length > 0
 
   currentVal = isChecked

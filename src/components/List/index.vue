@@ -27,7 +27,7 @@ const {
         <uni-load-more status="loading" />
       </slot>
       <slot v-if="isFinish" name="finish">
-        <uni-load-more status="no-more" />
+        <uni-load-more status="noMore" />
       </slot>
       <slot v-if="isEmpty" name="empty">
         <view>

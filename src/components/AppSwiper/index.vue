@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { CustomEvent } from '@uni-helper/uni-app-types'
 import vars from '~/styles/vars.module.scss'
 import { hexToRgb, isVideo, parseRect } from '~/utils';
 
@@ -11,7 +12,7 @@ const {
 }>()
 let current = $ref(0)
 
-const dotsStyles = $computed(() => {
+const dotsStyles = $computed<any>(() => {
   return {
     backgroundColor: hexToRgb(vars.theme, 0.3),
     border: `1px ${hexToRgb(vars.theme, 0.3)}, solid`,
@@ -30,8 +31,8 @@ function onClickDotItem(index: number) {
   current = index
 }
 
-function onSwipe(e: MinappEvent) {
-  current = e.detail.current
+function onSwipe(e: CustomEvent) {
+  current = e.detail?.current
 }
 </script>
 

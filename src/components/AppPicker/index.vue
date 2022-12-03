@@ -31,7 +31,7 @@ function createPicker(mode: PickerMode) {
     <picker
       v-if="picker"
       :value="picker.index"
-      :mode="picker.mode"
+      :mode="picker.mode as any"
       :range="list"
       range-key="name"
       start="1950-01-01"
